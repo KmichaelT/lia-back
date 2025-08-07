@@ -122,6 +122,9 @@ coverage
 ############################
 
 .env
+.env.local
+.env.production
+.env.staging
 license.txt
 exports
 .strapi
@@ -129,3 +132,34 @@ dist
 build
 .strapi-updater.json
 .strapi-cloud.json
+
+############################
+# Production & Deployment
+############################
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+data/
+
+# SSL Certificates
+*.pem
+*.key
+*.crt
+*.csr
+
+# Backup files
+*.backup
+*.dump
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+
+# PM2
+ecosystem.config.js
+
+# Deploy keys and certificates
+deploy_key*
+*.ppk

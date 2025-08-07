@@ -1,61 +1,209 @@
-# 🚀 Getting started with Strapi
+# LIA Back-End - Strapi CMS
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+Strapi CMS backend for Love In Action (loveinaction.co) website with automated email notifications for sponsorship requests.
 
-### `develop`
+## Features
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+- **Sponsorship Request Management** with automated email notifications
+- **Custom User Registration** with extended profile fields
+- **Child Profiles** and **Gallery Management**
+- **Blog Content Management**
+- **Email Integration** with Gmail SMTP
+- **Production-Ready Configuration** for PostgreSQL and deployment
 
+## Development Setup
+
+### Prerequisites
+- Node.js (18.x - 22.x)
+- npm 6+
+- PostgreSQL (for production)
+
+### Installation
+
+```bash
+# Clone the repository
+git clone <your-repo-url>
+cd lia-back-end
+
+# Install dependencies
+npm install
+
+# Copy environment file
+cp .env.example .env
+
+# Update .env with your configuration
+# Generate new security keys using: npm run strapi generate
 ```
+
+### Development Commands
+
+```bash
+# Start development server
 npm run develop
-# or
-yarn develop
+
+# Build for production
+npm run build:production
+
+# Start production server
+npm run start:production
+
+# Access admin panel
+open http://localhost:1337/admin
 ```
 
-### `start`
+## Strapi Cloud Deployment
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+### Prerequisites
+- GitHub repository
+- Strapi Cloud account
+- Gmail app password for email notifications
 
-```
-npm run start
-# or
-yarn start
-```
+### Deployment Steps
 
-### `build`
-
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
-
-```
-npm run build
-# or
-yarn build
+1. **Push to GitHub**
+```bash
+git add .
+git commit -m "Initial commit for Strapi Cloud deployment"
+git push origin main
 ```
 
-## ⚙️ Deployment
+2. **Deploy to Strapi Cloud**
+- Login to [Strapi Cloud](https://cloud.strapi.io)
+- Connect your GitHub repository
+- Select this repository for deployment
+- Configure environment variables (see below)
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
+3. **Environment Variables in Strapi Cloud**
+Set these in your Strapi Cloud project settings:
 
+```bash
+# App Security Keys (Generate new ones!)
+APP_KEYS=generateNewKey1,generateNewKey2,generateNewKey3,generateNewKey4
+API_TOKEN_SALT=generateNewSalt
+ADMIN_JWT_SECRET=generateNewSecret
+TRANSFER_TOKEN_SALT=generateNewTransferSalt
+JWT_SECRET=generateNewJWTSecret
+
+# Email Configuration
+DEFAULT_FROM_EMAIL=kmichaeltb@gmail.com
+DEFAULT_REPLY_TO_EMAIL=kmichaeltb@gmail.com
+ADMIN_EMAIL=kmichaeltb@gmail.com
+
+# SMTP Configuration (Gmail)
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USERNAME=kmichaeltb@gmail.com
+SMTP_PASSWORD=ssmw gfej kphm swkp
 ```
-yarn strapi deploy
+
+4. **Update Frontend Configuration**
+Update your Vercel frontend to point to your Strapi Cloud URL:
+```
+https://lia.strapiapp.com
 ```
 
-## 📚 Learn more
+## Email System
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+The system automatically sends emails when:
+- New sponsorship requests are created
+- Sponsorship requests are published
 
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+### Email Templates
+- **Sponsor Confirmation**: Sent to sponsor with request details
+- **Admin Notification**: Sent to admin team for new requests
 
-## ✨ Community
+### Email Configuration
+Configured for Gmail SMTP with app passwords. Update `config/plugins.ts` for other providers.
 
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+## API Endpoints
+
+### Public Endpoints
+- `GET /api/children` - Child profiles
+- `GET /api/gallery` - Gallery images
+- `GET /api/blogs` - Blog posts
+- `GET /api/home-page` - Homepage content
+- `POST /api/sponsorship-requests` - Create sponsorship request
+
+### Admin Endpoints
+- `/admin` - Strapi admin panel
+- Authentication required for content management
+
+## CORS Configuration
+
+Production CORS is configured for:
+- `https://loveinaction.co` (your Vercel frontend)
+- `https://www.loveinaction.co`
+- `https://lia.strapiapp.com` (Strapi Cloud URL)
+
+## Database Schema
+
+### Collections
+- **Children**: Child profiles for sponsorship
+- **Sponsorship Requests**: Sponsor applications with automated emails
+- **Gallery**: Image gallery management
+- **Blogs**: Blog post content
+- **Home Page**: Homepage content management
+
+### Content Types
+- All collections support draft/publish workflow
+- Media library for file uploads
+- User management with extended profiles
+
+## Monitoring & Maintenance
+
+### Health Check
+```bash
+curl https://lia.strapiapp.com/api/children
+```
+
+### Logs
+Check logs in Strapi Cloud dashboard:
+- Login to your Strapi Cloud project
+- Navigate to "Logs" section
+- Monitor application and database logs
+
+### Backup
+Strapi Cloud automatically handles:
+- Database backups
+- File storage backups
+- Disaster recovery
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Email not sending**
+   - Verify Gmail app password
+   - Check SMTP configuration in `config/plugins.ts`
+   - Review lifecycle hooks in `src/api/sponsorship-request/`
+
+2. **CORS errors**
+   - Update `config/env/production/middlewares.ts`
+   - Verify frontend domain matches CORS origins
+   - Check Strapi Cloud environment variables
+
+3. **Build failures in Strapi Cloud**
+   - Check build logs in Strapi Cloud dashboard
+   - Verify all dependencies are in package.json
+   - Ensure environment variables are set correctly
+
+## Security
+
+- Environment variables for sensitive data
+- HTTPS-only in production
+- CORS restricted to loveinaction.co domains
+- Regular security updates recommended
+
+## Support
+
+For issues and questions:
+- Check Strapi documentation: https://docs.strapi.io
+- Review application logs
+- Contact development team
 
 ---
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+**Strapi Cloud URL**: https://lia.strapiapp.com
+**Admin Panel**: https://lia.strapiapp.com/admin  
+**Frontend**: https://loveinaction.co (Vercel)

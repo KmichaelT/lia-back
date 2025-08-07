@@ -5,20 +5,26 @@
   "description": "A Strapi application",
   "scripts": {
     "build": "strapi build",
+    "build:production": "NODE_ENV=production strapi build",
     "console": "strapi console",
     "deploy": "strapi deploy",
     "dev": "strapi develop",
     "develop": "strapi develop",
     "start": "strapi start",
+    "start:production": "NODE_ENV=production strapi start",
     "strapi": "strapi",
     "upgrade": "npx @strapi/upgrade latest",
-    "upgrade:dry": "npx @strapi/upgrade latest --dry"
+    "upgrade:dry": "npx @strapi/upgrade latest --dry",
+    "postinstall": "strapi generate"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.21.0",
     "@strapi/plugin-users-permissions": "5.21.0",
+    "@strapi/provider-email-nodemailer": "^5.21.0",
+    "@strapi/provider-email-sendmail": "^5.21.0",
     "@strapi/strapi": "5.21.0",
-    "better-sqlite3": "11.3.0",
+    "better-sqlite3": "^12.2.0",
+    "pg": "^8.16.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",

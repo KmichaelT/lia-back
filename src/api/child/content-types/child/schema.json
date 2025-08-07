@@ -1,0 +1,79 @@
+{
+  "kind": "collectionType",
+  "collectionName": "children",
+  "info": {
+    "singularName": "child",
+    "pluralName": "children",
+    "displayName": "Child"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "liaId": {
+      "type": "string"
+    },
+    "fullName": {
+      "type": "string"
+    },
+    "dateOfBirth": {
+      "type": "date"
+    },
+    "sponsor": {
+      "type": "string"
+    },
+    "joinedSponsorshipProgram": {
+      "type": "date"
+    },
+    "ageAtJoining": {
+      "type": "string"
+    },
+    "gradeAtJoining": {
+      "type": "string"
+    },
+    "currentGrade": {
+      "type": "string"
+    },
+    "school": {
+      "type": "string"
+    },
+    "walkToSchool": {
+      "type": "string"
+    },
+    "family": {
+      "type": "text"
+    },
+    "location": {
+      "type": "string"
+    },
+    "education": {
+      "type": "string"
+    },
+    "aspiration": {
+      "type": "string"
+    },
+    "hobby": {
+      "type": "string"
+    },
+    "about": {
+      "type": "text"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "sponsorship_requests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sponsorship-request.sponsorship-request",
+      "mappedBy": "child"
+    }
+  }
+}
