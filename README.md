@@ -100,7 +100,7 @@ SMTP_PASSWORD=ssmw gfej kphm swkp
 4. **Update Frontend Configuration**
 Update your Vercel frontend to point to your Strapi Cloud URL:
 ```
-https://lia.strapiapp.com
+https://best-desire-8443ae2768.strapiapp.com
 ```
 
 ## Email System
@@ -134,7 +134,7 @@ Configured for Gmail SMTP with app passwords. Update `config/plugins.ts` for oth
 Production CORS is configured for:
 - `https://loveinaction.co` (your Vercel frontend)
 - `https://www.loveinaction.co`
-- `https://lia.strapiapp.com` (Strapi Cloud URL)
+- `https://best-desire-8443ae2768.strapiapp.com` (Strapi Cloud URL)
 
 ## Database Schema
 
@@ -154,7 +154,7 @@ Production CORS is configured for:
 
 ### Health Check
 ```bash
-curl https://lia.strapiapp.com/api/children
+curl https://best-desire-8443ae2768.strapiapp.com/api/children
 ```
 
 ### Logs
@@ -204,6 +204,6 @@ For issues and questions:
 
 ---
 
-**Strapi Cloud URL**: https://lia.strapiapp.com
-**Admin Panel**: https://lia.strapiapp.com/admin  
+**Strapi Cloud URL**: https://best-desire-8443ae2768.strapiapp.com
+**Admin Panel**: https://best-desire-8443ae2768.strapiapp.com/admin  
 **Frontend**: https://loveinaction.co (Vercel)

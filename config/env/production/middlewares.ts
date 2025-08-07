@@ -23,7 +23,7 @@ export default [
       origin: [
         'https://loveinaction.co',
         'https://www.loveinaction.co',
-        'https://lia.strapiapp.com',
+        'https://best-desire-8443ae2768.strapiapp.com',
         // Add development origins for staging/testing
         'http://localhost:3000',
         'http://localhost:3001',
