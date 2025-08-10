@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_viewers_event_viewers",
+  "info": {
+    "displayName": "Event Viewer",
+    "description": "Display events in various layouts",
+    "icon": "calendar"
+  },
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "sectionHeader": {
+      "type": "string"
+    },
+    "sectionDescription": {
+      "type": "text"
+    },
+    "events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::event.event"
+    },
+    "layoutType": {
+      "type": "enumeration",
+      "enum": ["grid", "list", "carousel"],
+      "default": "grid"
+    },
+    "maxItems": {
+      "type": "integer",
+      "default": 4,
+      "max": 4
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_content_bible_verses",
+  "info": {
+    "displayName": "Bible Verse",
+    "description": "Inspirational quote or bible verse section",
+    "icon": "book"
+  },
+  "attributes": {
+    "quote": {
+      "type": "richtext",
+      "required": true
+    },
+    "attribution": {
+      "type": "string"
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_viewers_stats_viewers",
+  "info": {
+    "displayName": "Stats Viewer",
+    "description": "Display statistics in various layouts",
+    "icon": "chart-line"
+  },
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "stats": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::stat.stat"
+    },
+    "layoutType": {
+      "type": "enumeration",
+      "enum": ["horizontal", "grid", "inline"],
+      "default": "horizontal"
+    },
+    "maxItems": {
+      "type": "integer",
+      "default": 6,
+      "max": 6
+    }
+  }
+}

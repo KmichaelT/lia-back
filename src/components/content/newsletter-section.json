@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_content_newsletter_sections",
+  "info": {
+    "displayName": "Newsletter Section",
+    "description": "Newsletter signup section",
+    "icon": "envelope"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "placeholderText": {
+      "type": "string",
+      "default": "Enter your email"
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Subscribe"
+    },
+    "formActionUrl": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "causes",
+  "info": {
+    "singularName": "cause",
+    "pluralName": "causes",
+    "displayName": "Cause",
+    "description": "Fundraising causes and campaigns"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "goalAmount": {
+      "type": "decimal",
+      "required": true
+    },
+    "raisedAmount": {
+      "type": "decimal",
+      "default": 0
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "category": {
+      "type": "string"
+    },
+    "causeStatus": {
+      "type": "enumeration",
+      "default": "active",
+      "enum": [
+        "active",
+        "completed",
+        "upcoming"
+      ]
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

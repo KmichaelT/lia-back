@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_viewers_cause_viewers",
+  "info": {
+    "displayName": "Cause Viewer",
+    "description": "Display causes in various layouts",
+    "icon": "heart"
+  },
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "sectionHeader": {
+      "type": "string"
+    },
+    "sectionDescription": {
+      "type": "text"
+    },
+    "causes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cause.cause"
+    },
+    "layoutType": {
+      "type": "enumeration",
+      "enum": ["grid", "carousel"],
+      "default": "grid"
+    },
+    "maxItems": {
+      "type": "integer",
+      "default": 5,
+      "max": 5
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_content_timeline_items",
+  "info": {
+    "displayName": "Timeline Item",
+    "description": "Individual timeline entry",
+    "icon": "clock"
+  },
+  "attributes": {
+    "startYear": {
+      "type": "string",
+      "required": true
+    },
+    "endYear": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

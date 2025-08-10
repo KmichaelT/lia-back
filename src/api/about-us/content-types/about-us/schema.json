@@ -1,0 +1,80 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_uses",
+  "info": {
+    "singularName": "about-us",
+    "pluralName": "about-uses",
+    "displayName": "About Us",
+    "description": "About page content management"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroTitle": {
+      "type": "string",
+      "default": "Love in Action"
+    },
+    "heroDescription": {
+      "type": "text"
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "missionTitle": {
+      "type": "string",
+      "default": "OUR MISSION"
+    },
+    "missionDescription": {
+      "type": "richtext"
+    },
+    "visionTitle": {
+      "type": "string",
+      "default": "OUR VISION"
+    },
+    "visionDescription": {
+      "type": "richtext"
+    },
+    "valuesTitle": {
+      "type": "string",
+      "default": "OUR VALUES"
+    },
+    "valuesDescription": {
+      "type": "richtext"
+    },
+    "timelineTitle": {
+      "type": "string",
+      "default": "Our Journey"
+    },
+    "currentPhase": {
+      "type": "integer",
+      "default": 0
+    },
+    "timelineItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.timeline-item",
+      "max": 4
+    },
+    "joinMissionTitle": {
+      "type": "string",
+      "default": "Join Our Mission"
+    },
+    "joinMissionDescription": {
+      "type": "text"
+    },
+    "joinPrimaryButton": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::link.link"
+    },
+    "joinSecondaryButton": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::link.link"
+    }
+  }
+}

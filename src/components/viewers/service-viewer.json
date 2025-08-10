@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_viewers_service_viewers",
+  "info": {
+    "displayName": "Service Viewer",
+    "description": "Display services in various layouts",
+    "icon": "briefcase"
+  },
+  "attributes": {
+    "sectionTitle": {
+      "type": "string",
+      "default": "What we do"
+    },
+    "sectionHeader": {
+      "type": "string"
+    },
+    "sectionDescription": {
+      "type": "text"
+    },
+    "services": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service.service"
+    },
+    "layoutType": {
+      "type": "enumeration",
+      "enum": ["grid", "list"],
+      "default": "grid"
+    }
+  }
+}

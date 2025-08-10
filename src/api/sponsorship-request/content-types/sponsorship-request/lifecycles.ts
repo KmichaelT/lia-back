@@ -59,7 +59,7 @@ module.exports = {
           <p><strong>Preferred Age:</strong> ${result.preferredAge || 'No preference'}</p>
           <p><strong>Preferred Gender:</strong> ${result.preferredGender || 'No preference'}</p>
           <p><strong>How they heard about us:</strong> ${result.hearAboutUs || 'Not specified'}</p>
-          <p><a href="${process.env.STRAPI_ADMIN_URL || 'http://localhost:1337'}/admin/content-manager/collectionType/api::sponsorship-request.sponsorship-request/${result.id}">View in Admin Panel</a></p>
+          <p><a href="${process.env.STRAPI_URL || 'http://localhost:1337'}/admin/content-manager/collectionType/api::sponsorship-request.sponsorship-request/${result.id}">View in Admin Panel</a></p>
         `
       });
       

@@ -4,27 +4,51 @@
   "info": {
     "singularName": "home-page",
     "pluralName": "home-pages",
-    "displayName": "Home Page"
+    "displayName": "Home Page",
+    "description": "Main homepage content management"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "HeroHeader": {
-      "type": "string"
+    "heroTitle": {
+      "type": "string",
+      "required": true,
+      "default": "Changing lives one child at a time!"
     },
-    "HeroDescription": {
+    "heroDescription": {
       "type": "text"
     },
-    "HeroImg": {
+    "heroBackgroundImage": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+      "allowedTypes": ["images", "videos"]
+    },
+    "heroPrimaryButton": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::link.link"
+    },
+    "heroSecondaryButton": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::link.link"
+    },
+    "heroStats": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::stat.stat"
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "viewers.event-viewer",
+        "viewers.cause-viewer",
+        "viewers.service-viewer",
+        "viewers.stats-viewer",
+        "content.newsletter-section",
+        "content.bible-verse"
       ]
     }
   }
