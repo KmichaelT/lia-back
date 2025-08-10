@@ -582,6 +582,48 @@ export interface ApiChildChild extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiDonationDonation extends Struct.CollectionTypeSchema {
+  collectionName: 'donations';
+  info: {
+    description: 'Zeffy donations synced via Zapier';
+    displayName: 'Donation';
+    pluralName: 'donations';
+    singularName: 'donation';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    amount: Schema.Attribute.Decimal;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    currency: Schema.Attribute.String;
+    donatedAt: Schema.Attribute.DateTime;
+    form_name: Schema.Attribute.String;
+    frequency: Schema.Attribute.Enumeration<['one_time', 'monthly']>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::donation.donation'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    raw_payload: Schema.Attribute.JSON;
+    sponsor: Schema.Attribute.Relation<'manyToOne', 'api::sponsor.sponsor'>;
+    sponsorship_id: Schema.Attribute.String;
+    transaction_id: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    utm_campaign: Schema.Attribute.String;
+    utm_medium: Schema.Attribute.String;
+    utm_source: Schema.Attribute.String;
+  };
+}
+
 export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   collectionName: 'events';
   info: {
@@ -785,6 +827,7 @@ export interface ApiSponsorSponsor extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    donations: Schema.Attribute.Relation<'oneToMany', 'api::donation.donation'>;
     email: Schema.Attribute.Email &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
@@ -796,7 +839,7 @@ export interface ApiSponsorSponsor extends Struct.CollectionTypeSchema {
       'api::sponsor.sponsor'
     > &
       Schema.Attribute.Private;
-    phone: Schema.Attribute.String & Schema.Attribute.Required;
+    phone: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1413,6 +1456,7 @@ declare module '@strapi/strapi' {
       'api::blog.blog': ApiBlogBlog;
       'api::cause.cause': ApiCauseCause;
       'api::child.child': ApiChildChild;
+      'api::donation.donation': ApiDonationDonation;
       'api::event.event': ApiEventEvent;
       'api::gallery.gallery': ApiGalleryGallery;
       'api::home-page.home-page': ApiHomePageHomePage;

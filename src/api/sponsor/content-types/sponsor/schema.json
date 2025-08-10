@@ -26,7 +26,7 @@
     },
     "phone": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "address": {
       "type": "string",
@@ -39,6 +39,12 @@
     "country": {
       "type": "string",
       "required": true
+    },
+    "donations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::donation.donation",
+      "mappedBy": "sponsor"
     }
   }
 }
