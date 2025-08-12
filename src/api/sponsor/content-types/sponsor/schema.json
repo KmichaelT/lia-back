@@ -40,11 +40,16 @@
       "type": "string",
       "required": true
     },
-    "donations": {
+    "children": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::donation.donation",
+      "target": "api::child.child",
       "mappedBy": "sponsor"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
     }
   }
 }

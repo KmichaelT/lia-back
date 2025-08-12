@@ -10,48 +10,46 @@
   "options": {
     "draftAndPublish": false
   },
+  "pluginOptions": {},
   "attributes": {
-    "transaction_id": { 
-      "type": "string", 
-      "required": true, 
-      "unique": true 
+    "transaction_id": {
+      "type": "string",
+      "required": true,
+      "unique": true
     },
-    "amount": { 
-      "type": "decimal" 
+    "amount": {
+      "type": "decimal"
     },
-    "currency": { 
-      "type": "string" 
+    "currency": {
+      "type": "string"
     },
-    "frequency": { 
-      "type": "enumeration", 
-      "enum": ["one_time", "monthly"] 
+    "frequency": {
+      "type": "enumeration",
+      "enum": [
+        "one_time",
+        "monthly"
+      ]
     },
-    "donatedAt": { 
-      "type": "datetime" 
+    "donatedAt": {
+      "type": "datetime"
     },
-    "form_name": { 
-      "type": "string" 
+    "form_name": {
+      "type": "string"
     },
-    "sponsorship_id": { 
-      "type": "string" 
+    "sponsorship_id": {
+      "type": "string"
     },
-    "utm_source": { 
-      "type": "string" 
+    "utm_source": {
+      "type": "string"
     },
-    "utm_medium": { 
-      "type": "string" 
+    "utm_medium": {
+      "type": "string"
     },
-    "utm_campaign": { 
-      "type": "string" 
+    "utm_campaign": {
+      "type": "string"
     },
-    "raw_payload": { 
-      "type": "json" 
-    },
-    "sponsor": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::sponsor.sponsor",
-      "inversedBy": "donations"
+    "raw_payload": {
+      "type": "json"
     }
   }
 }

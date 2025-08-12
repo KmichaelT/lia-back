@@ -1,0 +1,532 @@
+{
+  "timestamp": "2025-08-11T21:26:46.525Z",
+  "summary": {
+    "totalUniqueSponsors": 101,
+    "matched": 10,
+    "unmatched": 91,
+    "successful": 0,
+    "duplicates": 10,
+    "failed": 0
+  },
+  "successful": [],
+  "duplicates": [
+    {
+      "firstName": "Jerusalem",
+      "lastName": "Abebe",
+      "email": "jerusalem.abebe@gmail.com",
+      "error": "This attribute must be unique: email: This attribute must be unique"
+    },
+    {
+      "firstName": "Yilak",
+      "lastName": "Desta",
+      "email": "yilak.desta@yahoo.com",
+      "error": "This attribute must be unique: email: This attribute must be unique"
+    },
+    {
+      "firstName": "Ageazi",
+      "lastName": "Eden",
+      "email": "ageazieden@gmail.com",
+      "error": "This attribute must be unique: email: This attribute must be unique"
+    },
+    {
+      "firstName": "Dawite",
+      "lastName": "Ewnetu",
+      "email": "dawiteewnetu@gmail.com",
+      "error": "This attribute must be unique: email: This attribute must be unique"
+    },
+    {
+      "firstName": "Zerubabel",
+      "lastName": "Kassa",
+      "email": "zerubabelkassa@gmail.com",
+      "error": "This attribute must be unique: email: This attribute must be unique"
+    },
+    {
+      "firstName": "Natna",
+      "lastName": "Beyene",
+      "email": "natnabeyene@gmail.com",
+      "error": "This attribute must be unique: email: This attribute must be unique"
+    },
+    {
+      "firstName": "Abraham",
+      "lastName": "Wondirad",
+      "email": "abrahamwondirad@gmail.com",
+      "error": "This attribute must be unique: email: This attribute must be unique"
+    },
+    {
+      "firstName": "Mahlet",
+      "lastName": "Demeke",
+      "email": "mahletdemeke@gmail.com",
+      "error": "This attribute must be unique: email: This attribute must be unique"
+    },
+    {
+      "firstName": "Misgana",
+      "lastName": "Hine",
+      "email": "misgana_hine@yahoo.com",
+      "error": "This attribute must be unique: email: This attribute must be unique"
+    },
+    {
+      "firstName": "Bersabeh",
+      "lastName": "Legesse",
+      "email": "bersabehlegesse@gmail.com",
+      "error": "This attribute must be unique: email: This attribute must be unique"
+    }
+  ],
+  "failed": [],
+  "unmatchedSponsors": [
+    {
+      "sponsorName": "Mars Yenesh",
+      "firstName": "Mars",
+      "lastName": "Yenesh"
+    },
+    {
+      "sponsorName": "Fasil Tekle",
+      "firstName": "Fasil",
+      "lastName": "Tekle"
+    },
+    {
+      "sponsorName": "Nebiyu Biru",
+      "firstName": "Nebiyu",
+      "lastName": "Biru"
+    },
+    {
+      "sponsorName": "Versavel Melaku",
+      "firstName": "Versavel",
+      "lastName": "Melaku"
+    },
+    {
+      "sponsorName": "Zinash Bekele",
+      "firstName": "Zinash",
+      "lastName": "Bekele"
+    },
+    {
+      "sponsorName": "Mengistu Tamire",
+      "firstName": "Mengistu",
+      "lastName": "Tamire"
+    },
+    {
+      "sponsorName": "Samuel Gref",
+      "firstName": "Samuel",
+      "lastName": "Gref"
+    },
+    {
+      "sponsorName": "Abenezer Nuro",
+      "firstName": "Abenezer",
+      "lastName": "Nuro"
+    },
+    {
+      "sponsorName": "Biniyam Ahmed",
+      "firstName": "Biniyam",
+      "lastName": "Ahmed"
+    },
+    {
+      "sponsorName": "Nathan Solomon",
+      "firstName": "Nathan",
+      "lastName": "Solomon"
+    },
+    {
+      "sponsorName": "Meron Melaku",
+      "firstName": "Meron",
+      "lastName": "Melaku"
+    },
+    {
+      "sponsorName": "Adane Bedada",
+      "firstName": "Adane",
+      "lastName": "Bedada"
+    },
+    {
+      "sponsorName": "Hana Negussie",
+      "firstName": "Hana",
+      "lastName": "Negussie"
+    },
+    {
+      "sponsorName": "Etsegenet Tesfa",
+      "firstName": "Etsegenet",
+      "lastName": "Tesfa"
+    },
+    {
+      "sponsorName": "Betsegaw Yigezu",
+      "firstName": "Betsegaw",
+      "lastName": "Yigezu"
+    },
+    {
+      "sponsorName": "Yonathan Admasu",
+      "firstName": "Yonathan",
+      "lastName": "Admasu"
+    },
+    {
+      "sponsorName": "Eskedar Abebe",
+      "firstName": "Eskedar",
+      "lastName": "Abebe"
+    },
+    {
+      "sponsorName": "Yonas Girma",
+      "firstName": "Yonas",
+      "lastName": "Girma"
+    },
+    {
+      "sponsorName": "Aregash Abraha Tsege",
+      "firstName": "Aregash",
+      "lastName": "Abraha Tsege"
+    },
+    {
+      "sponsorName": "Admasu Lalisho",
+      "firstName": "Admasu",
+      "lastName": "Lalisho"
+    },
+    {
+      "sponsorName": "Yonathan Lambebo",
+      "firstName": "Yonathan",
+      "lastName": "Lambebo"
+    },
+    {
+      "sponsorName": "Biruk Feleke",
+      "firstName": "Biruk",
+      "lastName": "Feleke"
+    },
+    {
+      "sponsorName": "Amanuel Zewide",
+      "firstName": "Amanuel",
+      "lastName": "Zewide"
+    },
+    {
+      "sponsorName": "Bilisuma Diriba",
+      "firstName": "Bilisuma",
+      "lastName": "Diriba"
+    },
+    {
+      "sponsorName": "Tenagne Yetimgeta",
+      "firstName": "Tenagne",
+      "lastName": "Yetimgeta"
+    },
+    {
+      "sponsorName": "Saron Alemu",
+      "firstName": "Saron",
+      "lastName": "Alemu"
+    },
+    {
+      "sponsorName": "Meheret Haileselassie",
+      "firstName": "Meheret",
+      "lastName": "Haileselassie"
+    },
+    {
+      "sponsorName": "Menge Gebreegziabher",
+      "firstName": "Menge",
+      "lastName": "Gebreegziabher"
+    },
+    {
+      "sponsorName": "Ashenafi Sebani",
+      "firstName": "Ashenafi",
+      "lastName": "Sebani"
+    },
+    {
+      "sponsorName": "Arfaso Shigute",
+      "firstName": "Arfaso",
+      "lastName": "Shigute"
+    },
+    {
+      "sponsorName": "Abiso Lambebo",
+      "firstName": "Abiso",
+      "lastName": "Lambebo"
+    },
+    {
+      "sponsorName": "Bereket Games",
+      "firstName": "Bereket",
+      "lastName": "Games"
+    },
+    {
+      "sponsorName": "Leul Negussie",
+      "firstName": "Leul",
+      "lastName": "Negussie"
+    },
+    {
+      "sponsorName": "Endalkachew Zeleke",
+      "firstName": "Endalkachew",
+      "lastName": "Zeleke"
+    },
+    {
+      "sponsorName": "Selamawit Fogi",
+      "firstName": "Selamawit",
+      "lastName": "Fogi"
+    },
+    {
+      "sponsorName": "Eyoab Abdissa",
+      "firstName": "Eyoab",
+      "lastName": "Abdissa"
+    },
+    {
+      "sponsorName": "Caleb Mekonnen",
+      "firstName": "Caleb",
+      "lastName": "Mekonnen"
+    },
+    {
+      "sponsorName": "Dawit Dagne",
+      "firstName": "Dawit",
+      "lastName": "Dagne"
+    },
+    {
+      "sponsorName": "Liya Abarago",
+      "firstName": "Liya",
+      "lastName": "Abarago"
+    },
+    {
+      "sponsorName": "Woynishet Tekele",
+      "firstName": "Woynishet",
+      "lastName": "Tekele"
+    },
+    {
+      "sponsorName": "Eden Hiskias",
+      "firstName": "Eden",
+      "lastName": "Hiskias"
+    },
+    {
+      "sponsorName": "Rahel Yohannes",
+      "firstName": "Rahel",
+      "lastName": "Yohannes"
+    },
+    {
+      "sponsorName": "Alemayehu Serawitu",
+      "firstName": "Alemayehu",
+      "lastName": "Serawitu"
+    },
+    {
+      "sponsorName": "Demeke Mekonnen",
+      "firstName": "Demeke",
+      "lastName": "Mekonnen"
+    },
+    {
+      "sponsorName": "Eleni Bekele",
+      "firstName": "Eleni",
+      "lastName": "Bekele"
+    },
+    {
+      "sponsorName": "Paulos Tadesse",
+      "firstName": "Paulos",
+      "lastName": "Tadesse"
+    },
+    {
+      "sponsorName": "Yenehet Deggefa",
+      "firstName": "Yenehet",
+      "lastName": "Deggefa"
+    },
+    {
+      "sponsorName": "Ababu Yitbarek",
+      "firstName": "Ababu",
+      "lastName": "Yitbarek"
+    },
+    {
+      "sponsorName": "Selamawit Osheyack",
+      "firstName": "Selamawit",
+      "lastName": "Osheyack"
+    },
+    {
+      "sponsorName": "Nebiat Gebretsadik",
+      "firstName": "Nebiat",
+      "lastName": "Gebretsadik"
+    },
+    {
+      "sponsorName": "Daniel Lemma",
+      "firstName": "Daniel",
+      "lastName": "Lemma"
+    },
+    {
+      "sponsorName": "Samson Ketema",
+      "firstName": "Samson",
+      "lastName": "Ketema"
+    },
+    {
+      "sponsorName": "Binyamchapman Kintebo",
+      "firstName": "Binyamchapman",
+      "lastName": "Kintebo"
+    },
+    {
+      "sponsorName": "Kewani Mulugeta",
+      "firstName": "Kewani",
+      "lastName": "Mulugeta"
+    },
+    {
+      "sponsorName": "Amanuel Woldehana",
+      "firstName": "Amanuel",
+      "lastName": "Woldehana"
+    },
+    {
+      "sponsorName": "Elleni Ali",
+      "firstName": "Elleni",
+      "lastName": "Ali"
+    },
+    {
+      "sponsorName": "Bethlehem Taye",
+      "firstName": "Bethlehem",
+      "lastName": "Taye"
+    },
+    {
+      "sponsorName": "Elias Adera",
+      "firstName": "Elias",
+      "lastName": "Adera"
+    },
+    {
+      "sponsorName": "Worku Woldemariam",
+      "firstName": "Worku",
+      "lastName": "Woldemariam"
+    },
+    {
+      "sponsorName": "Israel Hailemichael",
+      "firstName": "Israel",
+      "lastName": "Hailemichael"
+    },
+    {
+      "sponsorName": "Hirut Ourge",
+      "firstName": "Hirut",
+      "lastName": "Ourge"
+    },
+    {
+      "sponsorName": "Tensae Godana",
+      "firstName": "Tensae",
+      "lastName": "Godana"
+    },
+    {
+      "sponsorName": "Zeleka Mersha",
+      "firstName": "Zeleka",
+      "lastName": "Mersha"
+    },
+    {
+      "sponsorName": "Solomon Kebede",
+      "firstName": "Solomon",
+      "lastName": "Kebede"
+    },
+    {
+      "sponsorName": "Melaku Haile",
+      "firstName": "Melaku",
+      "lastName": "Haile"
+    },
+    {
+      "sponsorName": "Kuma Demisse",
+      "firstName": "Kuma",
+      "lastName": "Demisse"
+    },
+    {
+      "sponsorName": "Teme Bayih",
+      "firstName": "Teme",
+      "lastName": "Bayih"
+    },
+    {
+      "sponsorName": "Abebe Kebede",
+      "firstName": "Abebe",
+      "lastName": "Kebede"
+    },
+    {
+      "sponsorName": "Gelila Tadege",
+      "firstName": "Gelila",
+      "lastName": "Tadege"
+    },
+    {
+      "sponsorName": "Taye Mengesha",
+      "firstName": "Taye",
+      "lastName": "Mengesha"
+    },
+    {
+      "sponsorName": "Fasika Feyissa",
+      "firstName": "Fasika",
+      "lastName": "Feyissa"
+    },
+    {
+      "sponsorName": "Yoseph Kumbi",
+      "firstName": "Yoseph",
+      "lastName": "Kumbi"
+    },
+    {
+      "sponsorName": "Teferi Tilahun",
+      "firstName": "Teferi",
+      "lastName": "Tilahun"
+    },
+    {
+      "sponsorName": "Elias Getaneh",
+      "firstName": "Elias",
+      "lastName": "Getaneh"
+    },
+    {
+      "sponsorName": "Zerubbabel Wolde",
+      "firstName": "Zerubbabel",
+      "lastName": "Wolde"
+    },
+    {
+      "sponsorName": "Henok Debela",
+      "firstName": "Henok",
+      "lastName": "Debela"
+    },
+    {
+      "sponsorName": "William Morgan",
+      "firstName": "William",
+      "lastName": "Morgan"
+    },
+    {
+      "sponsorName": "Eyasu Amedie",
+      "firstName": "Eyasu",
+      "lastName": "Amedie"
+    },
+    {
+      "sponsorName": "Aman Wondemagegegnhu",
+      "firstName": "Aman",
+      "lastName": "Wondemagegegnhu"
+    },
+    {
+      "sponsorName": "Kidst Takele",
+      "firstName": "Kidst",
+      "lastName": "Takele"
+    },
+    {
+      "sponsorName": "Selamawit Bekele",
+      "firstName": "Selamawit",
+      "lastName": "Bekele"
+    },
+    {
+      "sponsorName": "Michael Degaga",
+      "firstName": "Michael",
+      "lastName": "Degaga"
+    },
+    {
+      "sponsorName": "Ermias Bosho",
+      "firstName": "Ermias",
+      "lastName": "Bosho"
+    },
+    {
+      "sponsorName": "Tsigereda Abebe",
+      "firstName": "Tsigereda",
+      "lastName": "Abebe"
+    },
+    {
+      "sponsorName": "Tarik Asnake",
+      "firstName": "Tarik",
+      "lastName": "Asnake"
+    },
+    {
+      "sponsorName": "Filimon Dingamo",
+      "firstName": "Filimon",
+      "lastName": "Dingamo"
+    },
+    {
+      "sponsorName": "Merkebu Kebede",
+      "firstName": "Merkebu",
+      "lastName": "Kebede"
+    },
+    {
+      "sponsorName": "Rozina Kahsay",
+      "firstName": "Rozina",
+      "lastName": "Kahsay"
+    },
+    {
+      "sponsorName": "Abebayehu Amenu",
+      "firstName": "Abebayehu",
+      "lastName": "Amenu"
+    },
+    {
+      "sponsorName": "Abel Tedla",
+      "firstName": "Abel",
+      "lastName": "Tedla"
+    },
+    {
+      "sponsorName": "Looking for a sponsor",
+      "firstName": "Looking",
+      "lastName": "for a sponsor"
+    }
+  ]
+}

@@ -469,6 +469,41 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiAlertAlert extends Struct.CollectionTypeSchema {
+  collectionName: 'alerts';
+  info: {
+    displayName: 'Alert';
+    pluralName: 'alerts';
+    singularName: 'alert';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    endAt: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    isActive: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    link: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::alert.alert'> &
+      Schema.Attribute.Private;
+    message: Schema.Attribute.Text & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    startAt: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    type: Schema.Attribute.Enumeration<
+      ['info', 'warning', 'success', 'announcement']
+    > &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   collectionName: 'blogs';
   info: {
@@ -570,7 +605,7 @@ export interface ApiChildChild extends Struct.CollectionTypeSchema {
     location: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     school: Schema.Attribute.String;
-    sponsor: Schema.Attribute.String;
+    sponsor: Schema.Attribute.Relation<'manyToOne', 'api::sponsor.sponsor'>;
     sponsorship_requests: Schema.Attribute.Relation<
       'oneToMany',
       'api::sponsorship-request.sponsorship-request'
@@ -610,7 +645,6 @@ export interface ApiDonationDonation extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     raw_payload: Schema.Attribute.JSON;
-    sponsor: Schema.Attribute.Relation<'manyToOne', 'api::sponsor.sponsor'>;
     sponsorship_id: Schema.Attribute.String;
     transaction_id: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -822,12 +856,12 @@ export interface ApiSponsorSponsor extends Struct.CollectionTypeSchema {
   };
   attributes: {
     address: Schema.Attribute.String & Schema.Attribute.Required;
+    children: Schema.Attribute.Relation<'oneToMany', 'api::child.child'>;
     city: Schema.Attribute.String & Schema.Attribute.Required;
     country: Schema.Attribute.String & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    donations: Schema.Attribute.Relation<'oneToMany', 'api::donation.donation'>;
     email: Schema.Attribute.Email &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
@@ -844,6 +878,10 @@ export interface ApiSponsorSponsor extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    user: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
   };
 }
 
@@ -1453,6 +1491,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about-us.about-us': ApiAboutUsAboutUs;
+      'api::alert.alert': ApiAlertAlert;
       'api::blog.blog': ApiBlogBlog;
       'api::cause.cause': ApiCauseCause;
       'api::child.child': ApiChildChild;

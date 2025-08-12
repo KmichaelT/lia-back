@@ -21,7 +21,10 @@
       "type": "date"
     },
     "sponsor": {
-      "type": "string"
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sponsor.sponsor",
+      "inversedBy": "children"
     },
     "joinedSponsorshipProgram": {
       "type": "date"
