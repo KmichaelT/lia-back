@@ -932,7 +932,7 @@ export interface ApiSponsorshipRequestSponsorshipRequest
     processedBy: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     requestStatus: Schema.Attribute.Enumeration<
-      ['pending', 'approved', 'matched', 'rejected']
+      ['submitted', 'pending', 'matched', 'rejected']
     >;
     sponsee: Schema.Attribute.Integer &
       Schema.Attribute.Required &

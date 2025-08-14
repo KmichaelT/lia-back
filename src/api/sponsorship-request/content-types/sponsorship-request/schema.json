@@ -46,8 +46,8 @@
     "requestStatus": {
       "type": "enumeration",
       "enum": [
+        "submitted",
         "pending",
-        "approved",
         "matched",
         "rejected"
       ]

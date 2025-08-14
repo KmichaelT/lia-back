@@ -1,0 +1,582 @@
+{
+  "timestamp": "2025-08-12T16:30:21.549Z",
+  "environment": "PRODUCTION",
+  "targetUrl": "https://best-desire-8443ae2768.strapiapp.com",
+  "summary": {
+    "totalUniqueSponsors": 101,
+    "matched": 62,
+    "unmatched": 38,
+    "successful": 54,
+    "duplicates": 8,
+    "failed": 0
+  },
+  "successful": [
+    {
+      "id": 30,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 34,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 32,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 36,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 38,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 46,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 48,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 40,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 42,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 44,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 56,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 58,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 54,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 50,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 52,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 66,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 68,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 60,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 64,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 62,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 75,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 72,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 70,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 77,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 86,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 84,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 82,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 79,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 96,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 94,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 88,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 90,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 92,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 101,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 103,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 99,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 105,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 111,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 113,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 115,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 109,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 107,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 120,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 118,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 122,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 124,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 126,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 132,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 128,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 138,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 140,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 135,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 142,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    },
+    {
+      "id": 144,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
+    }
+  ],
+  "duplicates": [
+    {
+      "firstName": "Dawit",
+      "lastName": "Dagne",
+      "email": "dawiteewnetu@gmail.com",
+      "error": "This attribute must be unique: email: This attribute must be unique"
+    },
+    {
+      "firstName": "Eden",
+      "lastName": "Hiskias",
+      "email": "ageazieden@gmail.com",
+      "error": "This attribute must be unique: email: This attribute must be unique"
+    },
+    {
+      "firstName": "Amanuel",
+      "lastName": "Woldehana",
+      "email": "amanuelkifle46@gmail.com",
+      "error": "This attribute must be unique: email: This attribute must be unique"
+    },
+    {
+      "firstName": "Taye",
+      "lastName": "Mengesha",
+      "email": "tayegmengesha@gmail.com",
+      "error": "This attribute must be unique: email: This attribute must be unique"
+    },
+    {
+      "firstName": "Mahlet",
+      "lastName": "Demeke",
+      "email": "mahletdemeke@gmail.com",
+      "error": "This attribute must be unique: email: This attribute must be unique"
+    },
+    {
+      "firstName": "Elias",
+      "lastName": "Getaneh",
+      "email": "eliashai@yahoo.com",
+      "error": "This attribute must be unique: email: This attribute must be unique"
+    },
+    {
+      "firstName": "Aman",
+      "lastName": "Wondemagegegnhu",
+      "email": "amanuelkifle46@gmail.com",
+      "error": "This attribute must be unique: email: This attribute must be unique"
+    },
+    {
+      "firstName": "Michael",
+      "lastName": "Degaga",
+      "email": "kmichaelbekele@gmail.com",
+      "error": "This attribute must be unique: email: This attribute must be unique"
+    }
+  ],
+  "failed": [],
+  "unmatchedSponsors": [
+    {
+      "sponsorName": "Mars Yenesh",
+      "firstName": "Mars",
+      "lastName": "Yenesh"
+    },
+    {
+      "sponsorName": "Nebiyu Biru",
+      "firstName": "Nebiyu",
+      "lastName": "Biru"
+    },
+    {
+      "sponsorName": "Versavel Melaku",
+      "firstName": "Versavel",
+      "lastName": "Melaku"
+    },
+    {
+      "sponsorName": "Zinash Bekele",
+      "firstName": "Zinash",
+      "lastName": "Bekele"
+    },
+    {
+      "sponsorName": "Mengistu Tamire",
+      "firstName": "Mengistu",
+      "lastName": "Tamire"
+    },
+    {
+      "sponsorName": "Abenezer Nuro",
+      "firstName": "Abenezer",
+      "lastName": "Nuro"
+    },
+    {
+      "sponsorName": "Biniyam Ahmed",
+      "firstName": "Biniyam",
+      "lastName": "Ahmed"
+    },
+    {
+      "sponsorName": "Nathan Solomon",
+      "firstName": "Nathan",
+      "lastName": "Solomon"
+    },
+    {
+      "sponsorName": "Adane Bedada",
+      "firstName": "Adane",
+      "lastName": "Bedada"
+    },
+    {
+      "sponsorName": "Betsegaw Yigezu",
+      "firstName": "Betsegaw",
+      "lastName": "Yigezu"
+    },
+    {
+      "sponsorName": "Yonathan Admasu",
+      "firstName": "Yonathan",
+      "lastName": "Admasu"
+    },
+    {
+      "sponsorName": "Aregash Abraha Tsege",
+      "firstName": "Aregash",
+      "lastName": "Abraha Tsege"
+    },
+    {
+      "sponsorName": "Yonathan Lambebo",
+      "firstName": "Yonathan",
+      "lastName": "Lambebo"
+    },
+    {
+      "sponsorName": "Bilisuma Diriba",
+      "firstName": "Bilisuma",
+      "lastName": "Diriba"
+    },
+    {
+      "sponsorName": "Ashenafi Sebani",
+      "firstName": "Ashenafi",
+      "lastName": "Sebani"
+    },
+    {
+      "sponsorName": "Leul Negussie",
+      "firstName": "Leul",
+      "lastName": "Negussie"
+    },
+    {
+      "sponsorName": "Endalkachew Zeleke",
+      "firstName": "Endalkachew",
+      "lastName": "Zeleke"
+    },
+    {
+      "sponsorName": "Selamawit Fogi",
+      "firstName": "Selamawit",
+      "lastName": "Fogi"
+    },
+    {
+      "sponsorName": "Eyoab Abdissa",
+      "firstName": "Eyoab",
+      "lastName": "Abdissa"
+    },
+    {
+      "sponsorName": "Caleb Mekonnen",
+      "firstName": "Caleb",
+      "lastName": "Mekonnen"
+    },
+    {
+      "sponsorName": "Paulos Tadesse",
+      "firstName": "Paulos",
+      "lastName": "Tadesse"
+    },
+    {
+      "sponsorName": "Selamawit Osheyack",
+      "firstName": "Selamawit",
+      "lastName": "Osheyack"
+    },
+    {
+      "sponsorName": "Binyamchapman Kintebo",
+      "firstName": "Binyamchapman",
+      "lastName": "Kintebo"
+    },
+    {
+      "sponsorName": "Elleni Ali",
+      "firstName": "Elleni",
+      "lastName": "Ali"
+    },
+    {
+      "sponsorName": "Tensae Godana",
+      "firstName": "Tensae",
+      "lastName": "Godana"
+    },
+    {
+      "sponsorName": "Zeleka Mersha",
+      "firstName": "Zeleka",
+      "lastName": "Mersha"
+    },
+    {
+      "sponsorName": "Kuma Demisse",
+      "firstName": "Kuma",
+      "lastName": "Demisse"
+    },
+    {
+      "sponsorName": "Fasika Feyissa",
+      "firstName": "Fasika",
+      "lastName": "Feyissa"
+    },
+    {
+      "sponsorName": "Yoseph Kumbi",
+      "firstName": "Yoseph",
+      "lastName": "Kumbi"
+    },
+    {
+      "sponsorName": "William Morgan",
+      "firstName": "William",
+      "lastName": "Morgan"
+    },
+    {
+      "sponsorName": "Kidst Takele",
+      "firstName": "Kidst",
+      "lastName": "Takele"
+    },
+    {
+      "sponsorName": "Selamawit Bekele",
+      "firstName": "Selamawit",
+      "lastName": "Bekele"
+    },
+    {
+      "sponsorName": "Ermias Bosho",
+      "firstName": "Ermias",
+      "lastName": "Bosho"
+    },
+    {
+      "sponsorName": "Tsigereda Abebe",
+      "firstName": "Tsigereda",
+      "lastName": "Abebe"
+    },
+    {
+      "sponsorName": "Tarik Asnake",
+      "firstName": "Tarik",
+      "lastName": "Asnake"
+    },
+    {
+      "sponsorName": "Filimon Dingamo",
+      "firstName": "Filimon",
+      "lastName": "Dingamo"
+    },
+    {
+      "sponsorName": "Merkebu Kebede",
+      "firstName": "Merkebu",
+      "lastName": "Kebede"
+    },
+    {
+      "sponsorName": "Rozina Kahsay",
+      "firstName": "Rozina",
+      "lastName": "Kahsay"
+    }
+  ]
+}

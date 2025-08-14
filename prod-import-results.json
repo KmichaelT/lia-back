@@ -1,0 +1,856 @@
+{
+  "timestamp": "2025-08-12T16:21:13.615Z",
+  "environment": "PRODUCTION",
+  "targetUrl": "https://best-desire-8443ae2768.strapiapp.com",
+  "summary": {
+    "total": 168,
+    "successful": 167,
+    "duplicates": 0,
+    "failed": 1
+  },
+  "successful": [
+    {
+      "id": 10,
+      "username": "helenabebe7",
+      "email": "helenabebe7@gmail.com"
+    },
+    {
+      "id": 14,
+      "username": "elutadesse",
+      "email": "elutadesse@gmail.com"
+    },
+    {
+      "id": 11,
+      "username": "amanuelkifle46",
+      "email": "amanuelkifle46@gmail.com"
+    },
+    {
+      "id": 13,
+      "username": "hana13_alic",
+      "email": "hana13.alic@gmail.com"
+    },
+    {
+      "id": 17,
+      "username": "jerusalem_abebe",
+      "email": "jerusalem.abebe@gmail.com"
+    },
+    {
+      "id": 18,
+      "username": "meheretadesse",
+      "email": "meheretadesse@gmail.com"
+    },
+    {
+      "id": 16,
+      "username": "lillian_getachew",
+      "email": "lillian.getachew@gmail.com"
+    },
+    {
+      "id": 15,
+      "username": "elene_negussie",
+      "email": "elene.negussie@gmail.com"
+    },
+    {
+      "id": 19,
+      "username": "olpi_negussie",
+      "email": "olpi.negussie@gmail.com"
+    },
+    {
+      "id": 21,
+      "username": "yosikebede_39",
+      "email": "yosikebede.39@gmail.com"
+    },
+    {
+      "id": 22,
+      "username": "yerusalemak",
+      "email": "yerusalemak@gmail.com"
+    },
+    {
+      "id": 23,
+      "username": "abeltedla2010",
+      "email": "abeltedla2010@gmail.com"
+    },
+    {
+      "id": 24,
+      "username": "eyobete2",
+      "email": "eyobete2@gmail.com"
+    },
+    {
+      "id": 20,
+      "username": "ayekeyo",
+      "email": "ayekeyo@gmail.com"
+    },
+    {
+      "id": 25,
+      "username": "hellenaa2003",
+      "email": "hellenaa2003@yahoo.com"
+    },
+    {
+      "id": 28,
+      "username": "mishuindrias",
+      "email": "mishuindrias@gmail.com"
+    },
+    {
+      "id": 29,
+      "username": "dawiteewnetu",
+      "email": "dawiteewnetu@gmail.com"
+    },
+    {
+      "id": 26,
+      "username": "billygram1987",
+      "email": "billygram1987@gmail.com"
+    },
+    {
+      "id": 27,
+      "username": "laabiso",
+      "email": "laabiso@gmail.com"
+    },
+    {
+      "id": 34,
+      "username": "amaniaddisu60",
+      "email": "amaniaddisu60@gmail.com"
+    },
+    {
+      "id": 33,
+      "username": "etsegenet_mullings",
+      "email": "etsegenet.mullings@gmail.com"
+    },
+    {
+      "id": 31,
+      "username": "henok_heyi",
+      "email": "henok.heyi@gmail.com"
+    },
+    {
+      "id": 30,
+      "username": "dblhkt",
+      "email": "dblhkt@gmail.com"
+    },
+    {
+      "id": 32,
+      "username": "alemayehu1717",
+      "email": "alemayehu1717@yahoo.com"
+    },
+    {
+      "id": 39,
+      "username": "eskedar2",
+      "email": "eskedar2@gmail.com"
+    },
+    {
+      "id": 37,
+      "username": "shalomfogi",
+      "email": "shalomfogi@gmail.com"
+    },
+    {
+      "id": 38,
+      "username": "misgana_hine",
+      "email": "misgana_hine@yahoo.com"
+    },
+    {
+      "id": 36,
+      "username": "markfek12",
+      "email": "markfek12@gmail.com"
+    },
+    {
+      "id": 35,
+      "username": "habyos9ma",
+      "email": "habyos9ma@gmail.com"
+    },
+    {
+      "id": 44,
+      "username": "eyobkingdom",
+      "email": "eyobkingdom@gmail.com"
+    },
+    {
+      "id": 42,
+      "username": "samirose8",
+      "email": "samirose8@gmail.com"
+    },
+    {
+      "id": 43,
+      "username": "abebayehuamenu27",
+      "email": "abebayehuamenu27@gmail.com"
+    },
+    {
+      "id": 40,
+      "username": "ruth_osheyack",
+      "email": "ruth.osheyack@gmail.com"
+    },
+    {
+      "id": 41,
+      "username": "kalebmek",
+      "email": "kalebmek@yahoo.com"
+    },
+    {
+      "id": 48,
+      "username": "michaeldegaga2650",
+      "email": "michaeldegaga2650@gmail.com"
+    },
+    {
+      "id": 49,
+      "username": "aman_asrat",
+      "email": "aman.asrat@gmail.com"
+    },
+    {
+      "id": 47,
+      "username": "ptadese",
+      "email": "ptadese@gmail.com"
+    },
+    {
+      "id": 45,
+      "username": "eyasu_yim",
+      "email": "eyasu_yim@yahoo.com"
+    },
+    {
+      "id": 46,
+      "username": "hirutsinte",
+      "email": "hirutsinte@yahoo.com"
+    },
+    {
+      "id": 54,
+      "username": "abrahamwondirad",
+      "email": "abrahamwondirad@gmail.com"
+    },
+    {
+      "id": 52,
+      "username": "endy11alemu",
+      "email": "endy11alemu@yahoo.com"
+    },
+    {
+      "id": 51,
+      "username": "yadenee",
+      "email": "yadenee@yahoo.com"
+    },
+    {
+      "id": 50,
+      "username": "selamfasik",
+      "email": "selamfasik@yahoo.com"
+    },
+    {
+      "id": 53,
+      "username": "liyarago",
+      "email": "liyarago@gmail.com"
+    },
+    {
+      "id": 57,
+      "username": "gelilaberhanu82",
+      "email": "gelilaberhanu82@gmail.com"
+    },
+    {
+      "id": 55,
+      "username": "samsonk",
+      "email": "samsonk@ymail.com"
+    },
+    {
+      "id": 59,
+      "username": "ababuameha",
+      "email": "ababuameha@gmail.com"
+    },
+    {
+      "id": 58,
+      "username": "ksolomond07",
+      "email": "ksolomond07@gmail.com"
+    },
+    {
+      "id": 56,
+      "username": "fasiwolde",
+      "email": "fasiwolde@hotmail.com"
+    },
+    {
+      "id": 62,
+      "username": "dawitmkc",
+      "email": "dawitmkc@yahoo.com"
+    },
+    {
+      "id": 64,
+      "username": "kumisha34",
+      "email": "kumisha34@gmail.com"
+    },
+    {
+      "id": 61,
+      "username": "tayegmengesha",
+      "email": "tayegmengesha@gmail.com"
+    },
+    {
+      "id": 63,
+      "username": "etsegenet2016",
+      "email": "etsegenet2016@gmail.com"
+    },
+    {
+      "id": 60,
+      "username": "girmaeleni",
+      "email": "girmaeleni@yahoo.com"
+    },
+    {
+      "id": 66,
+      "username": "hailemmelaku",
+      "email": "hailemmelaku@gmail.com"
+    },
+    {
+      "id": 67,
+      "username": "kidlove_99",
+      "email": "kidlove_99@yahoo.com"
+    },
+    {
+      "id": 65,
+      "username": "bersabehlegesse",
+      "email": "bersabehlegesse@gmail.com"
+    },
+    {
+      "id": 68,
+      "username": "tensudinku",
+      "email": "tensudinku@gmail.com"
+    },
+    {
+      "id": 69,
+      "username": "kerialexb",
+      "email": "kerialexb@gmail.com"
+    },
+    {
+      "id": 73,
+      "username": "daneilbogale",
+      "email": "daneilbogale@yahoo.com"
+    },
+    {
+      "id": 71,
+      "username": "filasfaw456",
+      "email": "filasfaw456@gmail.com"
+    },
+    {
+      "id": 72,
+      "username": "liyahiskias",
+      "email": "liyahiskias@gmail.com"
+    },
+    {
+      "id": 74,
+      "username": "elieje67",
+      "email": "elieje67@gmail.com"
+    },
+    {
+      "id": 70,
+      "username": "israeld2",
+      "email": "israeld2@yahoo.com"
+    },
+    {
+      "id": 75,
+      "username": "betsetamirat123",
+      "email": "betsetamirat123@gmail.com"
+    },
+    {
+      "id": 78,
+      "username": "mengistieengida",
+      "email": "mengistieengida@gmail.com"
+    },
+    {
+      "id": 79,
+      "username": "fasil_demissie",
+      "email": "fasil.demissie@gmail.com"
+    },
+    {
+      "id": 76,
+      "username": "sameadis",
+      "email": "sameadis@gmail.com"
+    },
+    {
+      "id": 77,
+      "username": "benjisagras",
+      "email": "benjisagras@outlook.com"
+    },
+    {
+      "id": 82,
+      "username": "abenuro",
+      "email": "abenuro@gmail.com"
+    },
+    {
+      "id": 80,
+      "username": "samgref",
+      "email": "samgref@gmail.com"
+    },
+    {
+      "id": 84,
+      "username": "rahelyoha",
+      "email": "rahelyoha@gmail.com"
+    },
+    {
+      "id": 81,
+      "username": "meron_78",
+      "email": "meron_78@yahoo.com"
+    },
+    {
+      "id": 83,
+      "username": "amehanaim",
+      "email": "amehanaim@gmail.com"
+    },
+    {
+      "id": 87,
+      "username": "zenubek",
+      "email": "zenubek@gmail.com"
+    },
+    {
+      "id": 85,
+      "username": "gelila_assefa3",
+      "email": "gelila.assefa3@gmail.com"
+    },
+    {
+      "id": 86,
+      "username": "ashwuj",
+      "email": "ashwuj@icloud.com"
+    },
+    {
+      "id": 89,
+      "username": "berekethwold",
+      "email": "berekethwold@gmail.com"
+    },
+    {
+      "id": 88,
+      "username": "kerryaman43",
+      "email": "kerryaman43@gmail.com"
+    },
+    {
+      "id": 91,
+      "username": "yohana_mammo",
+      "email": "yohana.mammo@icloud.com"
+    },
+    {
+      "id": 92,
+      "username": "tenagnenegash55",
+      "email": "tenagnenegash55@gmail.com"
+    },
+    {
+      "id": 94,
+      "username": "happybaba221",
+      "email": "happybaba221@gmail.com"
+    },
+    {
+      "id": 90,
+      "username": "beza_mogese",
+      "email": "beza.mogese@gmail.com"
+    },
+    {
+      "id": 93,
+      "username": "michaelbekele85",
+      "email": "michaelbekele85@gmail.com"
+    },
+    {
+      "id": 99,
+      "username": "blanegezu",
+      "email": "blanegezu@gmail.com"
+    },
+    {
+      "id": 97,
+      "username": "wzerubbabel7",
+      "email": "wzerubbabel7@gmail.com"
+    },
+    {
+      "id": 95,
+      "username": "yencapri555",
+      "email": "yencapri555@gmail.com"
+    },
+    {
+      "id": 96,
+      "username": "eyerusbiftu",
+      "email": "eyerusbiftu@gmail.com"
+    },
+    {
+      "id": 98,
+      "username": "yilak_desta",
+      "email": "yilak.desta@gmail.com"
+    },
+    {
+      "id": 103,
+      "username": "misganacontact",
+      "email": "misganacontact@gmail.com"
+    },
+    {
+      "id": 104,
+      "username": "todd_morgan",
+      "email": "todd.morgan@comcast.net"
+    },
+    {
+      "id": 102,
+      "username": "kiyayusolomon",
+      "email": "kiyayusolomon@gmail.com"
+    },
+    {
+      "id": 101,
+      "username": "ageazieden",
+      "email": "ageazieden@gmail.com"
+    },
+    {
+      "id": 100,
+      "username": "zerubabelkassa",
+      "email": "zerubabelkassa@gmail.com"
+    },
+    {
+      "id": 107,
+      "username": "workuwolde",
+      "email": "workuwolde@gmail.com"
+    },
+    {
+      "id": 109,
+      "username": "mahletdemeke",
+      "email": "mahletdemeke@gmail.com"
+    },
+    {
+      "id": 106,
+      "username": "eliashai",
+      "email": "eliashai@yahoo.com"
+    },
+    {
+      "id": 105,
+      "username": "solyana_hdaniel",
+      "email": "solyana.hdaniel@gmail.com"
+    },
+    {
+      "id": 108,
+      "username": "rahel_sutu19",
+      "email": "rahel.sutu19@gmail.com"
+    },
+    {
+      "id": 112,
+      "username": "tarywa77",
+      "email": "tarywa77@gmail.com"
+    },
+    {
+      "id": 110,
+      "username": "yenehetassefad",
+      "email": "yenehetassefad@gmail.com"
+    },
+    {
+      "id": 111,
+      "username": "mekihl",
+      "email": "mekihl@yahoo.com"
+    },
+    {
+      "id": 113,
+      "username": "benjah8886",
+      "email": "benjah8886@gmail.com"
+    },
+    {
+      "id": 114,
+      "username": "helinam89",
+      "email": "helinam89@gmail.com"
+    },
+    {
+      "id": 118,
+      "username": "lnegussie1",
+      "email": "lnegussie1@gmail.com"
+    },
+    {
+      "id": 115,
+      "username": "kakukifle",
+      "email": "kakukifle@yahoo.com"
+    },
+    {
+      "id": 117,
+      "username": "teme_b",
+      "email": "teme.b@outlook.com"
+    },
+    {
+      "id": 116,
+      "username": "kahsayrozi",
+      "email": "kahsayrozi@gmail.com"
+    },
+    {
+      "id": 119,
+      "username": "hannateferi10",
+      "email": "hannateferi10@gmail.com"
+    },
+    {
+      "id": 123,
+      "username": "demekonnen",
+      "email": "demekonnen@gmail.com"
+    },
+    {
+      "id": 124,
+      "username": "bethlehemtaye22",
+      "email": "bethlehemtaye22@gmail.com"
+    },
+    {
+      "id": 120,
+      "username": "michaelrt07",
+      "email": "michaelrt07@gmail.com"
+    },
+    {
+      "id": 122,
+      "username": "a_johnson3397",
+      "email": "a.johnson3397@gmail.com"
+    },
+    {
+      "id": 121,
+      "username": "hiwett18",
+      "email": "hiwett18@gmail.com"
+    },
+    {
+      "id": 125,
+      "username": "nebiat80",
+      "email": "nebiat80@gmail.com"
+    },
+    {
+      "id": 129,
+      "username": "meronkd24",
+      "email": "meronkd24@gmail.com"
+    },
+    {
+      "id": 128,
+      "username": "kewanim40",
+      "email": "kewanim40@gmail.com"
+    },
+    {
+      "id": 127,
+      "username": "kebedehiwot",
+      "email": "kebedehiwot@ymail.com"
+    },
+    {
+      "id": 126,
+      "username": "misssibere",
+      "email": "misssibere@gmail.com"
+    },
+    {
+      "id": 134,
+      "username": "reyanakhalid72",
+      "email": "reyanakhalid72@gmail.com"
+    },
+    {
+      "id": 132,
+      "username": "i77mand",
+      "email": "i77mand@gmail.com"
+    },
+    {
+      "id": 131,
+      "username": "natnabeyene",
+      "email": "natnabeyene@gmail.com"
+    },
+    {
+      "id": 130,
+      "username": "woynishetababa",
+      "email": "woynishetababa@gmail.com"
+    },
+    {
+      "id": 133,
+      "username": "imran_miftah",
+      "email": "imran.miftah@gmail.com"
+    },
+    {
+      "id": 138,
+      "username": "betelhemek",
+      "email": "betelhemek@aol.com"
+    },
+    {
+      "id": 137,
+      "username": "samyb1907",
+      "email": "samyb1907@yahoo.com"
+    },
+    {
+      "id": 139,
+      "username": "misakgrm5",
+      "email": "misakgrm5@gmail.com"
+    },
+    {
+      "id": 135,
+      "username": "mhassefa",
+      "email": "mhassefa@gmail.com"
+    },
+    {
+      "id": 136,
+      "username": "christin_kingdom",
+      "email": "christin.kingdom@gmail.com"
+    },
+    {
+      "id": 143,
+      "username": "gtharar78",
+      "email": "gtharar78@gmail.com"
+    },
+    {
+      "id": 141,
+      "username": "merkebie",
+      "email": "merkebie@gmail.com"
+    },
+    {
+      "id": 140,
+      "username": "wedebini_09",
+      "email": "wedebini.09@gmail.com"
+    },
+    {
+      "id": 144,
+      "username": "yonasgirma77",
+      "email": "yonasgirma77@gmail.com"
+    },
+    {
+      "id": 142,
+      "username": "arfasoshiferaw12",
+      "email": "arfasoshiferaw12@gmail.com"
+    },
+    {
+      "id": 147,
+      "username": "michaelmulugeta68",
+      "email": "michaelmulugeta68@gmail.com"
+    },
+    {
+      "id": 145,
+      "username": "billy_asugna",
+      "email": "billy.asugna@yahoo.com"
+    },
+    {
+      "id": 149,
+      "username": "hermelagetachew4",
+      "email": "hermelagetachew4@gmail.com"
+    },
+    {
+      "id": 148,
+      "username": "misgana_kallore",
+      "email": "misgana.kallore@gmail.com"
+    },
+    {
+      "id": 146,
+      "username": "emawayshmulu",
+      "email": "emawayshmulu@gmail.com"
+    },
+    {
+      "id": 151,
+      "username": "tstsalem",
+      "email": "tstsalem@gmail.com"
+    },
+    {
+      "id": 150,
+      "username": "bante2021",
+      "email": "bante2021@gmail.com"
+    },
+    {
+      "id": 152,
+      "username": "aleazarali123",
+      "email": "aleazarali123@gmail.com"
+    },
+    {
+      "id": 153,
+      "username": "fregenettenkessa",
+      "email": "fregenettenkessa@gmail.com"
+    },
+    {
+      "id": 154,
+      "username": "adoniasnig",
+      "email": "adoniasnig@yahoo.com"
+    },
+    {
+      "id": 158,
+      "username": "yilak_desta",
+      "email": "yilak.desta@yahoo.com"
+    },
+    {
+      "id": 159,
+      "username": "maylatkassa",
+      "email": "maylatkassa@yahoo.com"
+    },
+    {
+      "id": 157,
+      "username": "asdidagmawi",
+      "email": "asdidagmawi@gmail.com"
+    },
+    {
+      "id": 156,
+      "username": "bezawitzeleke089",
+      "email": "bezawitzeleke089@gmail.com"
+    },
+    {
+      "id": 155,
+      "username": "samueldingamo",
+      "email": "samueldingamo@gmail.com"
+    },
+    {
+      "id": 161,
+      "username": "betty7getachew",
+      "email": "betty7getachew@gmail.com"
+    },
+    {
+      "id": 163,
+      "username": "dagmawe12",
+      "email": "dagmawe12@gmail.com"
+    },
+    {
+      "id": 162,
+      "username": "elshaddaiabamegal",
+      "email": "elshaddaiabamegal@gmail.com"
+    },
+    {
+      "id": 164,
+      "username": "egizaw415",
+      "email": "egizaw415@gmail.com"
+    },
+    {
+      "id": 160,
+      "username": "mktaone",
+      "email": "mktaone@hotmail.com"
+    },
+    {
+      "id": 165,
+      "username": "natehg",
+      "email": "natehg@gmail.com"
+    },
+    {
+      "id": 168,
+      "username": "kirubel_b_tadesse",
+      "email": "kirubel.b.tadesse@gmail.com"
+    },
+    {
+      "id": 169,
+      "username": "hamere_m",
+      "email": "hamere_m@hotmail.com"
+    },
+    {
+      "id": 166,
+      "username": "yonatanadmasu6060",
+      "email": "yonatanadmasu6060@gmail.com"
+    },
+    {
+      "id": 167,
+      "username": "versiathi",
+      "email": "versiathi@gmail.com"
+    },
+    {
+      "id": 174,
+      "username": "birukfeleke1997",
+      "email": "birukfeleke1997@gmail.com"
+    },
+    {
+      "id": 170,
+      "username": "hnigatu410",
+      "email": "hnigatu410@gmail.com"
+    },
+    {
+      "id": 171,
+      "username": "mshigutie",
+      "email": "mshigutie@gmail.com"
+    },
+    {
+      "id": 173,
+      "username": "bethtakele",
+      "email": "bethtakele@gmail.com"
+    },
+    {
+      "id": 172,
+      "username": "nahtansolomon",
+      "email": "nahtansolomon@gmail.com"
+    },
+    {
+      "id": 176,
+      "username": "tsion975",
+      "email": "tsion975@icloud.com"
+    },
+    {
+      "id": 177,
+      "username": "admelalu",
+      "email": "admelalu@gmail.com"
+    },
+    {
+      "id": 175,
+      "username": "saronsalemu",
+      "email": "saronsalemu@gmail.com"
+    }
+  ],
+  "duplicates": [],
+  "failed": [
+    {
+      "username": "etsub2roman",
+      "email": "etsub2roman@gmail.com",
+      "error": "socket hang up"
+    }
+  ]
+}
