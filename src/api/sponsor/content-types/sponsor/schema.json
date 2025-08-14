@@ -13,11 +13,11 @@
   "attributes": {
     "firstName": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "lastName": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "email": {
       "type": "email",
@@ -30,26 +30,51 @@
     },
     "address": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "city": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "country": {
       "type": "string",
-      "required": true
+      "required": false
+    },
+    "sponsorshipStatus": {
+      "type": "enumeration",
+      "required": true,
+      "default": "request_submitted",
+      "enum": [
+        "request_submitted",
+        "pending",
+        "matched"
+      ]
     },
     "children": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::child.child",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "sponsorshipStatus"
+            },
+            "matched"
+          ]
+        }
+      },
       "mappedBy": "sponsor"
     },
     "user": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user"
+    },
+    "profileComplete": {
+      "type": "boolean",
+      "required": true,
+      "default": false
     }
   }
 }

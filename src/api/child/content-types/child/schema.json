@@ -71,12 +71,6 @@
         "videos",
         "audios"
       ]
-    },
-    "sponsorship_requests": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::sponsorship-request.sponsorship-request",
-      "mappedBy": "child"
     }
   }
 }

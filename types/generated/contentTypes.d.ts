@@ -606,10 +606,6 @@ export interface ApiChildChild extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     school: Schema.Attribute.String;
     sponsor: Schema.Attribute.Relation<'manyToOne', 'api::sponsor.sponsor'>;
-    sponsorship_requests: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::sponsorship-request.sponsorship-request'
-    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -855,18 +851,18 @@ export interface ApiSponsorSponsor extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    address: Schema.Attribute.String & Schema.Attribute.Required;
+    address: Schema.Attribute.String;
     children: Schema.Attribute.Relation<'oneToMany', 'api::child.child'>;
-    city: Schema.Attribute.String & Schema.Attribute.Required;
-    country: Schema.Attribute.String & Schema.Attribute.Required;
+    city: Schema.Attribute.String;
+    country: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     email: Schema.Attribute.Email &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
-    firstName: Schema.Attribute.String & Schema.Attribute.Required;
-    lastName: Schema.Attribute.String & Schema.Attribute.Required;
+    firstName: Schema.Attribute.String;
+    lastName: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -874,7 +870,15 @@ export interface ApiSponsorSponsor extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     phone: Schema.Attribute.String;
+    profileComplete: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     publishedAt: Schema.Attribute.DateTime;
+    sponsorshipStatus: Schema.Attribute.Enumeration<
+      ['request_submitted', 'pending', 'matched']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'request_submitted'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -882,71 +886,6 @@ export interface ApiSponsorSponsor extends Struct.CollectionTypeSchema {
       'oneToOne',
       'plugin::users-permissions.user'
     >;
-  };
-}
-
-export interface ApiSponsorshipRequestSponsorshipRequest
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'sponsorship_requests';
-  info: {
-    displayName: 'sponsorship-request';
-    pluralName: 'sponsorship-requests';
-    singularName: 'sponsorship-request';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    address: Schema.Attribute.String & Schema.Attribute.Required;
-    child: Schema.Attribute.Relation<'manyToOne', 'api::child.child'>;
-    city: Schema.Attribute.String & Schema.Attribute.Required;
-    country: Schema.Attribute.String & Schema.Attribute.Required;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    email: Schema.Attribute.Email & Schema.Attribute.Required;
-    firstName: Schema.Attribute.String & Schema.Attribute.Required;
-    hearAboutUs: Schema.Attribute.Enumeration<
-      [
-        'website',
-        'social-media',
-        'friend-family',
-        'event',
-        'newsletter',
-        'other',
-      ]
-    >;
-    lastName: Schema.Attribute.String & Schema.Attribute.Required;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::sponsorship-request.sponsorship-request'
-    > &
-      Schema.Attribute.Private;
-    motivation: Schema.Attribute.Text & Schema.Attribute.Required;
-    notes: Schema.Attribute.Text;
-    phone: Schema.Attribute.String & Schema.Attribute.Required;
-    preferredAge: Schema.Attribute.String;
-    preferredGender: Schema.Attribute.Enumeration<['Male', 'Female']>;
-    processedAt: Schema.Attribute.DateTime;
-    processedBy: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    requestStatus: Schema.Attribute.Enumeration<
-      ['submitted', 'pending', 'matched', 'rejected']
-    >;
-    sponsee: Schema.Attribute.Integer &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMax<
-        {
-          min: 1;
-        },
-        number
-      > &
-      Schema.Attribute.DefaultTo<1>;
-    submittedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
   };
 }
 
@@ -1502,7 +1441,6 @@ declare module '@strapi/strapi' {
       'api::link.link': ApiLinkLink;
       'api::service.service': ApiServiceService;
       'api::sponsor.sponsor': ApiSponsorSponsor;
-      'api::sponsorship-request.sponsorship-request': ApiSponsorshipRequestSponsorshipRequest;
       'api::stat.stat': ApiStatStat;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
