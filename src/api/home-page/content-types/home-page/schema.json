@@ -28,12 +28,12 @@
         "videos"
       ]
     },
-    "heroPrimaryButton": {
+    "donateNowButton": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::link.link"
     },
-    "heroSecondaryButton": {
+    "watchVideoButton": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::link.link"

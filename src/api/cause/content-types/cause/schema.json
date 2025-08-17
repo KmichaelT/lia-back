@@ -19,14 +19,6 @@
     "description": {
       "type": "text"
     },
-    "goalAmount": {
-      "type": "decimal",
-      "required": true
-    },
-    "raisedAmount": {
-      "type": "decimal",
-      "default": 0
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -36,19 +28,6 @@
     },
     "category": {
       "type": "string"
-    },
-    "causeStatus": {
-      "type": "enumeration",
-      "default": "active",
-      "enum": [
-        "active",
-        "completed",
-        "upcoming"
-      ]
-    },
-    "featured": {
-      "type": "boolean",
-      "default": false
     },
     "link": {
       "type": "relation",

@@ -22,15 +22,6 @@
     },
     "description": {
       "type": "text"
-    },
-    "icon": {
-      "type": "string"
-    },
-    "unit": {
-      "type": "string"
-    },
-    "category": {
-      "type": "string"
     }
   }
 }

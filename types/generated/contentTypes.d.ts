@@ -425,7 +425,6 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    currentPhase: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
     heroDescription: Schema.Attribute.Text;
     heroImage: Schema.Attribute.Media<'images'>;
     heroTitle: Schema.Attribute.String &
@@ -448,6 +447,11 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
     missionTitle: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'OUR MISSION'>;
     publishedAt: Schema.Attribute.DateTime;
+    teamMembers: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    teamMembersDescription: Schema.Attribute.Text;
+    teamMembersHeader: Schema.Attribute.String;
     timelineItems: Schema.Attribute.Component<'content.timeline-item', true> &
       Schema.Attribute.SetMinMax<
         {
@@ -546,23 +550,16 @@ export interface ApiCauseCause extends Struct.CollectionTypeSchema {
   };
   attributes: {
     category: Schema.Attribute.String;
-    causeStatus: Schema.Attribute.Enumeration<
-      ['active', 'completed', 'upcoming']
-    > &
-      Schema.Attribute.DefaultTo<'active'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
-    featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    goalAmount: Schema.Attribute.Decimal & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images'>;
     link: Schema.Attribute.Relation<'oneToOne', 'api::link.link'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::cause.cause'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    raisedAmount: Schema.Attribute.Decimal & Schema.Attribute.DefaultTo<0>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -630,7 +627,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     date: Schema.Attribute.DateTime & Schema.Attribute.Required;
-    description: Schema.Attribute.RichText;
+    description: Schema.Attribute.Text;
     endDate: Schema.Attribute.DateTime;
     featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     image: Schema.Attribute.Media<'images'>;
@@ -639,7 +636,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     location: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    registrationLink: Schema.Attribute.String;
+    registrationLink: Schema.Attribute.Relation<'oneToOne', 'api::link.link'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -701,6 +698,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    donateNowButton: Schema.Attribute.Relation<'oneToOne', 'api::link.link'>;
     events: Schema.Attribute.Relation<'oneToMany', 'api::event.event'>;
     eventsDescription: Schema.Attribute.Text;
     eventsHeader: Schema.Attribute.String &
@@ -709,11 +707,6 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       Schema.Attribute.DefaultTo<'Upcoming Events'>;
     heroBackgroundImage: Schema.Attribute.Media<'images' | 'videos'>;
     heroDescription: Schema.Attribute.Text;
-    heroPrimaryButton: Schema.Attribute.Relation<'oneToOne', 'api::link.link'>;
-    heroSecondaryButton: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::link.link'
-    >;
     heroStats: Schema.Attribute.Relation<'oneToMany', 'api::stat.stat'>;
     heroTitle: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -734,6 +727,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    watchVideoButton: Schema.Attribute.Relation<'oneToOne', 'api::link.link'>;
   };
 }
 
@@ -752,16 +746,14 @@ export interface ApiLinkLink extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    icon: Schema.Attribute.String;
     isExternal: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     label: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::link.link'> &
       Schema.Attribute.Private;
+    opensInPopup: Schema.Attribute.Boolean;
     platform: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    style: Schema.Attribute.Enumeration<['primary', 'secondary', 'outline']> &
-      Schema.Attribute.DefaultTo<'primary'>;
     type: Schema.Attribute.Enumeration<
       ['social', 'cta', 'navigation', 'external']
     > &
@@ -789,15 +781,15 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
-    featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    icon: Schema.Attribute.String;
+    icon: Schema.Attribute.Enumeration<
+      ['Flame', 'GraduationCap', 'Home', 'Users']
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::service.service'
     > &
       Schema.Attribute.Private;
-    order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
@@ -867,18 +859,15 @@ export interface ApiStatStat extends Struct.CollectionTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
-    category: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
-    icon: Schema.Attribute.String;
     label: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::stat.stat'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    unit: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

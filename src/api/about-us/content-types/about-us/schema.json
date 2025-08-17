@@ -22,7 +22,9 @@
     "heroImage": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "missionTitle": {
       "type": "string",
@@ -49,14 +51,10 @@
       "type": "string",
       "default": "Our Journey"
     },
-    "currentPhase": {
-      "type": "integer",
-      "default": 0
-    },
     "timelineItems": {
       "type": "component",
-      "repeatable": true,
       "component": "content.timeline-item",
+      "repeatable": true,
       "max": 4
     },
     "joinMissionTitle": {
@@ -75,6 +73,22 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::link.link"
+    },
+    "teamMembers": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "teamMembersHeader": {
+      "type": "string"
+    },
+    "teamMembersDescription": {
+      "type": "text"
     }
   }
 }

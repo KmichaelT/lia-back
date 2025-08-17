@@ -33,21 +33,12 @@
     "platform": {
       "type": "string"
     },
-    "icon": {
-      "type": "string"
-    },
-    "style": {
-      "type": "enumeration",
-      "default": "primary",
-      "enum": [
-        "primary",
-        "secondary",
-        "outline"
-      ]
-    },
     "isExternal": {
       "type": "boolean",
       "default": false
+    },
+    "opensInPopup": {
+      "type": "boolean"
     }
   }
 }
