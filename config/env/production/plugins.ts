@@ -17,6 +17,13 @@ export default ({ env }) => ({
       },
     },
   },
+  'content-manager': {
+    config: {
+      features: {
+        preview: false, // Disable preview feature that's causing 404 errors
+      },
+    },
+  },
   upload: {
     config: {
       // You might want to configure S3 or another cloud storage for production

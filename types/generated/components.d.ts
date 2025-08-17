@@ -47,7 +47,6 @@ export interface ContentTimelineItem extends Struct.ComponentSchema {
   };
 }
 
-
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {

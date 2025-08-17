@@ -16,4 +16,11 @@ export default () => ({
       },
     },
   },
+  'content-manager': {
+    config: {
+      features: {
+        preview: false, // Disable preview feature that's causing 404 errors
+      },
+    },
+  },
 });
