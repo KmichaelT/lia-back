@@ -20,11 +20,6 @@
       "relation": "oneToMany",
       "target": "api::event.event"
     },
-    "layoutType": {
-      "type": "enumeration",
-      "enum": ["grid", "list", "carousel"],
-      "default": "grid"
-    },
     "maxItems": {
       "type": "integer",
       "default": 4,

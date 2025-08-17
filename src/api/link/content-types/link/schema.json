@@ -22,8 +22,13 @@
     },
     "type": {
       "type": "enumeration",
-      "enum": ["social", "cta", "navigation", "external"],
-      "default": "external"
+      "default": "external",
+      "enum": [
+        "social",
+        "cta",
+        "navigation",
+        "external"
+      ]
     },
     "platform": {
       "type": "string"
@@ -33,8 +38,12 @@
     },
     "style": {
       "type": "enumeration",
-      "enum": ["primary", "secondary", "outline"],
-      "default": "primary"
+      "default": "primary",
+      "enum": [
+        "primary",
+        "secondary",
+        "outline"
+      ]
     },
     "isExternal": {
       "type": "boolean",

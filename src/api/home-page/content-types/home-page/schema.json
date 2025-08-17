@@ -14,8 +14,8 @@
   "attributes": {
     "heroTitle": {
       "type": "string",
-      "required": true,
-      "default": "Changing lives one child at a time!"
+      "default": "Changing lives one child at a time!",
+      "required": true
     },
     "heroDescription": {
       "type": "text"
@@ -23,7 +23,10 @@
     "heroBackgroundImage": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images", "videos"]
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
     },
     "heroPrimaryButton": {
       "type": "relation",
@@ -40,16 +43,53 @@
       "relation": "oneToMany",
       "target": "api::stat.stat"
     },
-    "sections": {
-      "type": "dynamiczone",
-      "components": [
-        "viewers.event-viewer",
-        "viewers.cause-viewer",
-        "viewers.service-viewer",
-        "viewers.stats-viewer",
-        "content.newsletter-section",
-        "content.bible-verse"
-      ]
+    "causesTitle": {
+      "type": "string",
+      "default": "Our Causes"
+    },
+    "causesHeader": {
+      "type": "string",
+      "default": "Making a Difference"
+    },
+    "causesDescription": {
+      "type": "text"
+    },
+    "causes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cause.cause"
+    },
+    "eventsTitle": {
+      "type": "string",
+      "default": "Upcoming Events"
+    },
+    "eventsHeader": {
+      "type": "string",
+      "default": "Join Our Community"
+    },
+    "eventsDescription": {
+      "type": "text"
+    },
+    "events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::event.event"
+    },
+    "servicesTitle": {
+      "type": "string",
+      "default": "What We Do"
+    },
+    "servicesHeader": {
+      "type": "string",
+      "default": "Our Services"
+    },
+    "servicesDescription": {
+      "type": "text"
+    },
+    "services": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service.service"
     }
   }
 }

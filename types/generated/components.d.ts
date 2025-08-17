@@ -56,8 +56,6 @@ export interface ViewersCauseViewer extends Struct.ComponentSchema {
   };
   attributes: {
     causes: Schema.Attribute.Relation<'oneToMany', 'api::cause.cause'>;
-    layoutType: Schema.Attribute.Enumeration<['grid', 'carousel']> &
-      Schema.Attribute.DefaultTo<'grid'>;
     maxItems: Schema.Attribute.Integer &
       Schema.Attribute.SetMinMax<
         {
@@ -81,8 +79,6 @@ export interface ViewersEventViewer extends Struct.ComponentSchema {
   };
   attributes: {
     events: Schema.Attribute.Relation<'oneToMany', 'api::event.event'>;
-    layoutType: Schema.Attribute.Enumeration<['grid', 'list', 'carousel']> &
-      Schema.Attribute.DefaultTo<'grid'>;
     maxItems: Schema.Attribute.Integer &
       Schema.Attribute.SetMinMax<
         {
@@ -105,8 +101,6 @@ export interface ViewersServiceViewer extends Struct.ComponentSchema {
     icon: 'briefcase';
   };
   attributes: {
-    layoutType: Schema.Attribute.Enumeration<['grid', 'list']> &
-      Schema.Attribute.DefaultTo<'grid'>;
     sectionDescription: Schema.Attribute.Text;
     sectionHeader: Schema.Attribute.String;
     sectionTitle: Schema.Attribute.String &
@@ -123,8 +117,6 @@ export interface ViewersStatsViewer extends Struct.ComponentSchema {
     icon: 'chart-line';
   };
   attributes: {
-    layoutType: Schema.Attribute.Enumeration<['horizontal', 'grid', 'inline']> &
-      Schema.Attribute.DefaultTo<'horizontal'>;
     maxItems: Schema.Attribute.Integer &
       Schema.Attribute.SetMinMax<
         {

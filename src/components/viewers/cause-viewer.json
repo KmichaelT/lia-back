@@ -20,11 +20,6 @@
       "relation": "oneToMany",
       "target": "api::cause.cause"
     },
-    "layoutType": {
-      "type": "enumeration",
-      "enum": ["grid", "carousel"],
-      "default": "grid"
-    },
     "maxItems": {
       "type": "integer",
       "default": 5,

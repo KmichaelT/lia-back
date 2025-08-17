@@ -29,21 +29,21 @@
       "default": "OUR MISSION"
     },
     "missionDescription": {
-      "type": "richtext"
+      "type": "text"
     },
     "visionTitle": {
       "type": "string",
       "default": "OUR VISION"
     },
     "visionDescription": {
-      "type": "richtext"
+      "type": "text"
     },
     "valuesTitle": {
       "type": "string",
       "default": "OUR VALUES"
     },
     "valuesDescription": {
-      "type": "richtext"
+      "type": "text"
     },
     "timelineTitle": {
       "type": "string",

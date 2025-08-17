@@ -163,3 +163,31 @@ ecosystem.config.js
 # Deploy keys and certificates
 deploy_key*
 *.ppk
+
+############################
+# LIA Project Files
+############################
+
+# Production import scripts with credentials
+*-prod.js
+import-*-prod.js
+
+# Import result files
+*-import-results.json
+import-results.json
+
+# User data files
+lia_users.json
+lia-children-profiles-with-sponsors.json
+
+# Temporary import scripts
+import-children.js
+import-sponsors.js
+import-users.js
+test-alerts.js
+
+# Excel/Office files
+*.xlsx
+*.xls
+*.doc
+*.docx

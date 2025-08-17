@@ -444,7 +444,7 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
       'api::about-us.about-us'
     > &
       Schema.Attribute.Private;
-    missionDescription: Schema.Attribute.RichText;
+    missionDescription: Schema.Attribute.Text;
     missionTitle: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'OUR MISSION'>;
     publishedAt: Schema.Attribute.DateTime;
@@ -460,10 +460,10 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    valuesDescription: Schema.Attribute.RichText;
+    valuesDescription: Schema.Attribute.Text;
     valuesTitle: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'OUR VALUES'>;
-    visionDescription: Schema.Attribute.RichText;
+    visionDescription: Schema.Attribute.Text;
     visionTitle: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'OUR VISION'>;
   };
@@ -553,10 +553,11 @@ export interface ApiCauseCause extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.RichText;
+    description: Schema.Attribute.Text;
     featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     goalAmount: Schema.Attribute.Decimal & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images'>;
+    link: Schema.Attribute.Relation<'oneToOne', 'api::link.link'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::cause.cause'> &
       Schema.Attribute.Private;
@@ -610,47 +611,6 @@ export interface ApiChildChild extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     walkToSchool: Schema.Attribute.String;
-  };
-}
-
-export interface ApiDonationDonation extends Struct.CollectionTypeSchema {
-  collectionName: 'donations';
-  info: {
-    description: 'Zeffy donations synced via Zapier';
-    displayName: 'Donation';
-    pluralName: 'donations';
-    singularName: 'donation';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    amount: Schema.Attribute.Decimal;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    currency: Schema.Attribute.String;
-    donatedAt: Schema.Attribute.DateTime;
-    form_name: Schema.Attribute.String;
-    frequency: Schema.Attribute.Enumeration<['one_time', 'monthly']>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::donation.donation'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    raw_payload: Schema.Attribute.JSON;
-    sponsorship_id: Schema.Attribute.String;
-    transaction_id: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    utm_campaign: Schema.Attribute.String;
-    utm_medium: Schema.Attribute.String;
-    utm_source: Schema.Attribute.String;
   };
 }
 
@@ -732,9 +692,21 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    causes: Schema.Attribute.Relation<'oneToMany', 'api::cause.cause'>;
+    causesDescription: Schema.Attribute.Text;
+    causesHeader: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Making a Difference'>;
+    causesTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Our Causes'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    events: Schema.Attribute.Relation<'oneToMany', 'api::event.event'>;
+    eventsDescription: Schema.Attribute.Text;
+    eventsHeader: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Join Our Community'>;
+    eventsTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Upcoming Events'>;
     heroBackgroundImage: Schema.Attribute.Media<'images' | 'videos'>;
     heroDescription: Schema.Attribute.Text;
     heroPrimaryButton: Schema.Attribute.Relation<'oneToOne', 'api::link.link'>;
@@ -753,16 +725,12 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    sections: Schema.Attribute.DynamicZone<
-      [
-        'viewers.event-viewer',
-        'viewers.cause-viewer',
-        'viewers.service-viewer',
-        'viewers.stats-viewer',
-        'content.newsletter-section',
-        'content.bible-verse',
-      ]
-    >;
+    services: Schema.Attribute.Relation<'oneToMany', 'api::service.service'>;
+    servicesDescription: Schema.Attribute.Text;
+    servicesHeader: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Our Services'>;
+    servicesTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'What We Do'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -817,12 +785,10 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    backgroundColor: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'bg-blue-200'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.RichText;
+    description: Schema.Attribute.Text;
     featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     icon: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -1434,7 +1400,6 @@ declare module '@strapi/strapi' {
       'api::blog.blog': ApiBlogBlog;
       'api::cause.cause': ApiCauseCause;
       'api::child.child': ApiChildChild;
-      'api::donation.donation': ApiDonationDonation;
       'api::event.event': ApiEventEvent;
       'api::gallery.gallery': ApiGalleryGallery;
       'api::home-page.home-page': ApiHomePageHomePage;

@@ -20,11 +20,6 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::service.service"
-    },
-    "layoutType": {
-      "type": "enumeration",
-      "enum": ["grid", "list"],
-      "default": "grid"
     }
   }
 }

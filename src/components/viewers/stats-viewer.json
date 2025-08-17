@@ -14,11 +14,6 @@
       "relation": "oneToMany",
       "target": "api::stat.stat"
     },
-    "layoutType": {
-      "type": "enumeration",
-      "enum": ["horizontal", "grid", "inline"],
-      "default": "horizontal"
-    },
     "maxItems": {
       "type": "integer",
       "default": 6,

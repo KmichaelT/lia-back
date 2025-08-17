@@ -17,14 +17,10 @@
       "required": true
     },
     "description": {
-      "type": "richtext"
+      "type": "text"
     },
     "icon": {
       "type": "string"
-    },
-    "backgroundColor": {
-      "type": "string",
-      "default": "bg-blue-200"
     },
     "featured": {
       "type": "boolean",
