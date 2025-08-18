@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "team_membership_requests",
+  "info": {
+    "singularName": "team-membership-request",
+    "pluralName": "team-membership-requests",
+    "displayName": "Team membership request"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "howYouCanHelp": {
+      "type": "text"
+    },
+    "submittedAt": {
+      "type": "datetime"
+    }
+  }
+}

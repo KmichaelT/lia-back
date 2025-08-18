@@ -38,7 +38,17 @@
       "default": false
     },
     "opensInPopup": {
-      "type": "boolean"
+      "type": "boolean",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "isExternal"
+            },
+            false
+          ]
+        }
+      }
     }
   }
 }

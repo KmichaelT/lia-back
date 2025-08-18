@@ -10,7 +10,8 @@ export default {
       logo: '/admin/menu-logo.png',
     },
     head: {
-      favicon: '/favicon.png',
+      favicon: '/admin/favicon.ico',
+      title: 'LIA Admin',
     },
     
     // Available languages
