@@ -549,11 +549,13 @@ export interface ApiCauseCause extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    blogLink: Schema.Attribute.Relation<'oneToOne', 'api::blog.blog'>;
     category: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
+    hasDetails: Schema.Attribute.Boolean;
     image: Schema.Attribute.Media<'images'>;
     link: Schema.Attribute.Relation<'oneToOne', 'api::link.link'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -781,9 +783,11 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
+    hasDetails: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     icon: Schema.Attribute.Enumeration<
       ['Flame', 'GraduationCap', 'Home', 'Users']
     >;
+    learnMoreBlog: Schema.Attribute.Relation<'oneToOne', 'api::blog.blog'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

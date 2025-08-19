@@ -29,6 +29,24 @@
     "category": {
       "type": "string"
     },
+    "blogLink": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::blog.blog",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "hasDetails"
+            },
+            true
+          ]
+        }
+      }
+    },
+    "hasDetails": {
+      "type": "boolean"
+    },
     "link": {
       "type": "relation",
       "relation": "oneToOne",

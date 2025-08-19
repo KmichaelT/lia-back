@@ -27,6 +27,25 @@
         "Home",
         "Users"
       ]
+    },
+    "hasDetails": {
+      "type": "boolean",
+      "default": false
+    },
+    "learnMoreBlog": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::blog.blog",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "hasDetails"
+            },
+            true
+          ]
+        }
+      }
     }
   }
 }
