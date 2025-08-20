@@ -432,11 +432,6 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
     joinMissionDescription: Schema.Attribute.Text;
     joinMissionTitle: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Join Our Mission'>;
-    joinPrimaryButton: Schema.Attribute.Relation<'oneToOne', 'api::link.link'>;
-    joinSecondaryButton: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::link.link'
-    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -452,6 +447,7 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
     >;
     teamMembersDescription: Schema.Attribute.Text;
     teamMembersHeader: Schema.Attribute.String;
+    timelineDescription: Schema.Attribute.Text;
     timelineItems: Schema.Attribute.Component<'content.timeline-item', true> &
       Schema.Attribute.SetMinMax<
         {

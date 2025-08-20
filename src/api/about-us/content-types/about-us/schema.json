@@ -51,6 +51,9 @@
       "type": "string",
       "default": "Our Journey"
     },
+    "timelineDescription": {
+      "type": "text"
+    },
     "timelineItems": {
       "type": "component",
       "component": "content.timeline-item",
@@ -63,16 +66,6 @@
     },
     "joinMissionDescription": {
       "type": "text"
-    },
-    "joinPrimaryButton": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::link.link"
-    },
-    "joinSecondaryButton": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::link.link"
     },
     "teamMembers": {
       "type": "media",
