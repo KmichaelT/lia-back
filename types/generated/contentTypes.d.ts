@@ -515,7 +515,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    body: Schema.Attribute.Blocks;
+    body: Schema.Attribute.RichText;
     category: Schema.Attribute.Enumeration<['Education', 'Mentorship']>;
     cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Schema.Attribute.DateTime;
@@ -832,11 +832,10 @@ export interface ApiSponsorSponsor extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
     publishedAt: Schema.Attribute.DateTime;
-    sponsorshipStatus: Schema.Attribute.Enumeration<
-      ['request_submitted', 'pending', 'matched']
-    > &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'request_submitted'>;
+    sponsorship: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::sponsorship.sponsorship'
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -844,6 +843,38 @@ export interface ApiSponsorSponsor extends Struct.CollectionTypeSchema {
       'oneToOne',
       'plugin::users-permissions.user'
     >;
+  };
+}
+
+export interface ApiSponsorshipSponsorship extends Struct.CollectionTypeSchema {
+  collectionName: 'sponsorships';
+  info: {
+    displayName: 'Sponsorship';
+    pluralName: 'sponsorships';
+    singularName: 'sponsorship';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sponsorship.sponsorship'
+    > &
+      Schema.Attribute.Private;
+    numberOfChildren: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    sponsor: Schema.Attribute.Relation<'oneToOne', 'api::sponsor.sponsor'>;
+    sponsorshipStatus: Schema.Attribute.Enumeration<
+      ['submitted', 'pending', 'matched']
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1428,6 +1459,7 @@ declare module '@strapi/strapi' {
       'api::link.link': ApiLinkLink;
       'api::service.service': ApiServiceService;
       'api::sponsor.sponsor': ApiSponsorSponsor;
+      'api::sponsorship.sponsorship': ApiSponsorshipSponsorship;
       'api::stat.stat': ApiStatStat;
       'api::team-membership-request.team-membership-request': ApiTeamMembershipRequestTeamMembershipRequest;
       'plugin::content-releases.release': PluginContentReleasesRelease;

@@ -40,30 +40,10 @@
       "type": "string",
       "required": false
     },
-    "sponsorshipStatus": {
-      "type": "enumeration",
-      "required": true,
-      "default": "request_submitted",
-      "enum": [
-        "request_submitted",
-        "pending",
-        "matched"
-      ]
-    },
     "children": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::child.child",
-      "conditions": {
-        "visible": {
-          "==": [
-            {
-              "var": "sponsorshipStatus"
-            },
-            "matched"
-          ]
-        }
-      },
       "mappedBy": "sponsor"
     },
     "user": {
@@ -75,6 +55,12 @@
       "type": "boolean",
       "required": true,
       "default": false
+    },
+    "sponsorship": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sponsorship.sponsorship",
+      "inversedBy": "sponsor"
     }
   }
 }
