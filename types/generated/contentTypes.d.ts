@@ -515,18 +515,42 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    body: Schema.Attribute.Blocks;
-    category: Schema.Attribute.Enumeration<['Education', 'Mentorship']>;
-    cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    body: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    category: Schema.Attribute.Enumeration<
+      [
+        'Health & Wellness',
+        'Community Outreach',
+        'Youth Empowerment',
+        'Training & Development',
+        'Advocacy',
+        'Partnerships',
+        'Volunteering',
+        'Awareness Campaigns',
+        'Sponsorship',
+        'Leadership',
+        'Innovation',
+        'Sustainability',
+        'Cultural Programs',
+        'Family Support',
+        'Food & Shelter',
+        'Scholarships',
+        'Career Guidance',
+        'Networking',
+        'Recreation',
+        'Support Services',
+      ]
+    >;
+    cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Heading: Schema.Attribute.String;
+    Heading: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    SubHeading: Schema.Attribute.String;
+    SubHeading: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

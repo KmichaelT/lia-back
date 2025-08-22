@@ -14,6 +14,7 @@
     "cover": {
       "type": "media",
       "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -22,20 +23,41 @@
       ]
     },
     "Heading": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "SubHeading": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "category": {
       "type": "enumeration",
       "enum": [
-        "Education",
-        "Mentorship"
+        "Health & Wellness",
+        "Community Outreach",
+        "Youth Empowerment",
+        "Training & Development",
+        "Advocacy",
+        "Partnerships",
+        "Volunteering",
+        "Awareness Campaigns",
+        "Sponsorship",
+        "Leadership",
+        "Innovation",
+        "Sustainability",
+        "Cultural Programs",
+        "Family Support",
+        "Food & Shelter",
+        "Scholarships",
+        "Career Guidance",
+        "Networking",
+        "Recreation",
+        "Support Services"
       ]
     },
     "body": {
-      "type": "blocks"
+      "type": "blocks",
+      "required": true
     }
   }
 }
