@@ -15,9 +15,6 @@
       "type": "text",
       "required": true
     },
-    "link": {
-      "type": "string"
-    },
     "startAt": {
       "type": "datetime",
       "required": true
@@ -28,13 +25,23 @@
     },
     "isActive": {
       "type": "boolean",
-      "default": true,
-      "required": true
+      "required": true,
+      "default": true
     },
     "type": {
       "type": "enumeration",
-      "enum": ["info", "warning", "success", "announcement"],
-      "required": true
+      "required": true,
+      "enum": [
+        "info",
+        "warning",
+        "success",
+        "announcement"
+      ]
+    },
+    "link": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::link.link"
     }
   }
 }

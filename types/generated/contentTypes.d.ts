@@ -487,7 +487,7 @@ export interface ApiAlertAlert extends Struct.CollectionTypeSchema {
     isActive: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<true>;
-    link: Schema.Attribute.String;
+    link: Schema.Attribute.Relation<'oneToOne', 'api::link.link'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::alert.alert'> &
       Schema.Attribute.Private;
