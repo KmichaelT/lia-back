@@ -35,7 +35,7 @@
       ]
     },
     "body": {
-      "type": "richtext"
+      "type": "blocks"
     }
   }
 }
