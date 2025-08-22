@@ -17,11 +17,11 @@
     },
     "startAt": {
       "type": "datetime",
-      "required": true
+      "required": false
     },
     "endAt": {
       "type": "datetime",
-      "required": true
+      "required": false
     },
     "isActive": {
       "type": "boolean",

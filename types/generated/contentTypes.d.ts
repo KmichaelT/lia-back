@@ -483,7 +483,7 @@ export interface ApiAlertAlert extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    endAt: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    endAt: Schema.Attribute.DateTime;
     isActive: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<true>;
@@ -493,7 +493,7 @@ export interface ApiAlertAlert extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     message: Schema.Attribute.Text & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    startAt: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    startAt: Schema.Attribute.DateTime;
     type: Schema.Attribute.Enumeration<
       ['info', 'warning', 'success', 'announcement']
     > &
