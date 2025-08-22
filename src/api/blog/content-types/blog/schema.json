@@ -33,6 +33,9 @@
     "category": {
       "type": "enumeration",
       "enum": [
+        "Education",
+        "Spiritual",
+        "Basic Needs",
         "Health & Wellness",
         "Community Outreach",
         "Youth Empowerment",

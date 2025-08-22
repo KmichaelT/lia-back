@@ -497,7 +497,8 @@ export interface ApiAlertAlert extends Struct.CollectionTypeSchema {
     type: Schema.Attribute.Enumeration<
       ['info', 'warning', 'success', 'announcement']
     > &
-      Schema.Attribute.Required;
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'info'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -518,6 +519,9 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     body: Schema.Attribute.Blocks & Schema.Attribute.Required;
     category: Schema.Attribute.Enumeration<
       [
+        'Education',
+        'Spiritual',
+        'Basic Needs',
         'Health & Wellness',
         'Community Outreach',
         'Youth Empowerment',

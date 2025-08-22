@@ -31,6 +31,7 @@
     "type": {
       "type": "enumeration",
       "required": true,
+      "default": "info",
       "enum": [
         "info",
         "warning",
