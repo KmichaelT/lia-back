@@ -42,6 +42,12 @@
         "success",
         "announcement"
       ]
+    },
+    "linkUrl": {
+      "type": "string"
+    },
+    "linkText": {
+      "type": "string"
     }
   }
 }
