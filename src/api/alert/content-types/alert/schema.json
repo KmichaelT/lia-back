@@ -19,10 +19,6 @@
       "type": "text",
       "required": true
     },
-    "linkText": {
-      "type": "string",
-      "required": false
-    },
     "startAt": {
       "type": "datetime",
       "required": false
@@ -46,11 +42,6 @@
         "success",
         "announcement"
       ]
-    },
-    "link": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::link.link"
     }
   }
 }
