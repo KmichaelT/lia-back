@@ -5,7 +5,8 @@
     "singularName": "link",
     "pluralName": "links",
     "displayName": "Link",
-    "description": "Centralized link management"
+    "description": "Centralized link management",
+    "mainField": "label"
   },
   "options": {
     "draftAndPublish": false

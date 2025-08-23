@@ -11,9 +11,17 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "title": {
+      "type": "string",
+      "required": false
+    },
     "message": {
       "type": "text",
       "required": true
+    },
+    "linkText": {
+      "type": "string",
+      "required": false
     },
     "startAt": {
       "type": "datetime",

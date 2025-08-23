@@ -488,12 +488,14 @@ export interface ApiAlertAlert extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<true>;
     link: Schema.Attribute.Relation<'oneToOne', 'api::link.link'>;
+    linkText: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::alert.alert'> &
       Schema.Attribute.Private;
     message: Schema.Attribute.Text & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     startAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
     type: Schema.Attribute.Enumeration<
       ['info', 'warning', 'success', 'announcement']
     > &
@@ -762,6 +764,7 @@ export interface ApiLinkLink extends Struct.CollectionTypeSchema {
   info: {
     description: 'Centralized link management';
     displayName: 'Link';
+    mainField: 'label';
     pluralName: 'links';
     singularName: 'link';
   };
