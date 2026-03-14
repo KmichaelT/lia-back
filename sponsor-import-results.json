@@ -1,76 +1,76 @@
 {
-  "timestamp": "2025-08-11T21:26:46.525Z",
+  "timestamp": "2025-09-29T10:37:43.623Z",
   "summary": {
     "totalUniqueSponsors": 101,
     "matched": 10,
     "unmatched": 91,
-    "successful": 0,
-    "duplicates": 10,
+    "successful": 10,
+    "duplicates": 0,
     "failed": 0
   },
-  "successful": [],
-  "duplicates": [
+  "successful": [
     {
-      "firstName": "Jerusalem",
-      "lastName": "Abebe",
-      "email": "jerusalem.abebe@gmail.com",
-      "error": "This attribute must be unique: email: This attribute must be unique"
+      "id": 2,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
     },
     {
-      "firstName": "Yilak",
-      "lastName": "Desta",
-      "email": "yilak.desta@yahoo.com",
-      "error": "This attribute must be unique: email: This attribute must be unique"
+      "id": 4,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
     },
     {
-      "firstName": "Ageazi",
-      "lastName": "Eden",
-      "email": "ageazieden@gmail.com",
-      "error": "This attribute must be unique: email: This attribute must be unique"
+      "id": 6,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
     },
     {
-      "firstName": "Dawite",
-      "lastName": "Ewnetu",
-      "email": "dawiteewnetu@gmail.com",
-      "error": "This attribute must be unique: email: This attribute must be unique"
+      "id": 8,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
     },
     {
-      "firstName": "Zerubabel",
-      "lastName": "Kassa",
-      "email": "zerubabelkassa@gmail.com",
-      "error": "This attribute must be unique: email: This attribute must be unique"
+      "id": 10,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
     },
     {
-      "firstName": "Natna",
-      "lastName": "Beyene",
-      "email": "natnabeyene@gmail.com",
-      "error": "This attribute must be unique: email: This attribute must be unique"
+      "id": 12,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
     },
     {
-      "firstName": "Abraham",
-      "lastName": "Wondirad",
-      "email": "abrahamwondirad@gmail.com",
-      "error": "This attribute must be unique: email: This attribute must be unique"
+      "id": 14,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
     },
     {
-      "firstName": "Mahlet",
-      "lastName": "Demeke",
-      "email": "mahletdemeke@gmail.com",
-      "error": "This attribute must be unique: email: This attribute must be unique"
+      "id": 16,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
     },
     {
-      "firstName": "Misgana",
-      "lastName": "Hine",
-      "email": "misgana_hine@yahoo.com",
-      "error": "This attribute must be unique: email: This attribute must be unique"
+      "id": 18,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
     },
     {
-      "firstName": "Bersabeh",
-      "lastName": "Legesse",
-      "email": "bersabehlegesse@gmail.com",
-      "error": "This attribute must be unique: email: This attribute must be unique"
+      "id": 20,
+      "firstName": "N/A",
+      "lastName": "N/A",
+      "email": "N/A"
     }
   ],
+  "duplicates": [],
   "failed": [],
   "unmatchedSponsors": [
     {

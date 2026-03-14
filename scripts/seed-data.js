@@ -12,33 +12,25 @@ const servicesData = [
     title: "Basic Needs",
     description: "Providing essential supplies and support for daily living necessities.",
     icon: "Home",
-    backgroundColor: "bg-secondary/20",
-    featured: true,
-    order: 1
+    hasDetails: true
   },
   {
     title: "Spiritual",
     description: "Nurturing faith and providing spiritual guidance for holistic wellbeing.",
     icon: "Flame",
-    backgroundColor: "bg-yellow-200",
-    featured: true,
-    order: 2
+    hasDetails: true
   },
   {
     title: "Educational",
     description: "Empowering communities through knowledge and skills development.",
     icon: "GraduationCap",
-    backgroundColor: "bg-blue-200",
-    featured: true,
-    order: 3
+    hasDetails: true
   },
   {
     title: "Mentorship",
     description: "One-on-one guidance to help individuals reach their full potential.",
     icon: "Users",
-    backgroundColor: "bg-teal-200",
-    featured: true,
-    order: 4
+    hasDetails: true
   }
 ];
 
@@ -49,7 +41,6 @@ const eventsData = [
     description: "Join us May 31 for the 2nd Annual Run With Purpose, spread love, support our mission, and enjoy community fun.",
     date: "2025-05-31T09:00:00.000Z",
     location: "Community Park",
-    registrationLink: "https://www.zeffy.com/en-US/ticketing/2025-lia-5k-run",
     featured: true
   },
   {
@@ -80,47 +71,32 @@ const causesData = [
   {
     title: "Electricity and Water Installation",
     description: "Enhances quality of life by improving access to clean water, lighting, and technology, which support health and education. Install electric and water lines to provide essential infrastructure for schools and households.",
-    goalAmount: 100000,
-    raisedAmount: 65000,
     category: "Infrastructure",
-    causeStatus: "active",
-    featured: true
+    hasDetails: true
   },
   {
     title: "Education and Mentorship",
     description: "Equips children with the tools and guidance they need to achieve their dreams and break the cycle of poverty. Offer tutoring, mentoring programs, and school supplies to enhance academic and personal success.",
-    goalAmount: 100000,
-    raisedAmount: 80000,
     category: "Education",
-    causeStatus: "active",
-    featured: true
+    hasDetails: true
   },
   {
     title: "Feeding Program",
     description: "Ensures children remain healthy, energized, and focused on their education. Provide nutritious meals to combat malnutrition and support children's physical and mental growth.",
-    goalAmount: 100000,
-    raisedAmount: 75000,
     category: "Nutrition",
-    causeStatus: "active",
-    featured: true
+    hasDetails: true
   },
   {
     title: "Building a Children and Youth Center",
     description: "Empowers youth by offering opportunities for learning, mentorship, and recreation. Establish a safe and enriching space equipped with a library, classrooms, and sports facilities to foster education and talents.",
-    goalAmount: 100000,
-    raisedAmount: 40000,
     category: "Infrastructure",
-    causeStatus: "active",
-    featured: true
+    hasDetails: true
   },
   {
     title: "Cloth Donation Program",
     description: "By donating clothing to children in Ethiopia, we create a lasting impact by improving their well-being, boosting self-confidence, and fostering opportunities for a brighter future. To provide children in Southern Ethiopia with essential clothing, ensuring comfort, dignity, and improved quality of life while supporting their educational and social development.",
-    goalAmount: 100000,
-    raisedAmount: 55000,
     category: "Other",
-    causeStatus: "active",
-    featured: true
+    hasDetails: true
   }
 ];
 
@@ -129,34 +105,22 @@ const statsData = [
   {
     label: "Children Sponsored",
     value: 120,
-    description: "Children currently receiving education and support",
-    icon: "Users",
-    unit: "+",
-    category: "impact"
+    description: "Children currently receiving education and support"
   },
   {
     label: "Years On Mission",
     value: 4,
-    description: "Years of dedicated service to the community",
-    icon: "Calendar",
-    unit: "+",
-    category: "impact"
+    description: "Years of dedicated service to the community"
   },
   {
     label: "Total Raised",
     value: 500000,
-    description: "Total funds raised for various causes",
-    icon: "DollarSign",
-    unit: "$",
-    category: "finance"
+    description: "Total funds raised for various causes"
   },
   {
     label: "Active Volunteers",
     value: 50,
-    description: "Dedicated volunteers supporting our mission",
-    icon: "Heart",
-    unit: "+",
-    category: "community"
+    description: "Dedicated volunteers supporting our mission"
   }
 ];
 
@@ -167,21 +131,18 @@ const linksData = [
     label: "Donate Now",
     url: "https://www.zeffy.com/en-US/donation-form-v2/d7a24fa2-5425-4e72-b337-120c4f0b8c64",
     type: "cta",
-    style: "primary",
     isExternal: true
   },
   {
     label: "Watch Demo",
     url: "#video",
     type: "cta",
-    style: "secondary",
     isExternal: false
   },
   {
     label: "Buy Tickets",
     url: "https://www.zeffy.com/en-US/ticketing/2025-lia-5k-run",
     type: "cta",
-    style: "primary",
     isExternal: true
   },
   // Navigation Links
@@ -189,35 +150,30 @@ const linksData = [
     label: "Home",
     url: "/",
     type: "navigation",
-    style: "primary",
     isExternal: false
   },
   {
     label: "About",
     url: "/about",
     type: "navigation",
-    style: "primary",
     isExternal: false
   },
   {
     label: "Gallery",
     url: "/gallery",
     type: "navigation",
-    style: "primary",
     isExternal: false
   },
   {
     label: "Blog",
     url: "/blog",
     type: "navigation",
-    style: "primary",
     isExternal: false
   },
   {
     label: "Contact",
     url: "/contact",
     type: "navigation",
-    style: "primary",
     isExternal: false
   },
   // Social Links
@@ -226,7 +182,6 @@ const linksData = [
     url: "https://facebook.com/loveinactionethiopia",
     type: "social",
     platform: "facebook",
-    icon: "Facebook",
     isExternal: true
   },
   {
@@ -234,7 +189,6 @@ const linksData = [
     url: "https://instagram.com/loveinactionethiopia",
     type: "social",
     platform: "instagram",
-    icon: "Instagram",
     isExternal: true
   },
   {
@@ -242,7 +196,6 @@ const linksData = [
     url: "https://twitter.com/loveinactioneth",
     type: "social",
     platform: "twitter",
-    icon: "Twitter",
     isExternal: true
   }
 ];
