@@ -71,6 +71,12 @@
         "videos",
         "audios"
       ]
+    },
+    "sponsorLetters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sponsor-letter.sponsor-letter",
+      "mappedBy": "child"
     }
   }
 }

@@ -61,6 +61,12 @@
       "relation": "oneToOne",
       "target": "api::sponsorship.sponsorship",
       "inversedBy": "sponsor"
+    },
+    "sponsorLetters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sponsor-letter.sponsor-letter",
+      "mappedBy": "sponsor"
     }
   }
 }

@@ -593,6 +593,10 @@ export interface ApiChildChild extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     school: Schema.Attribute.String;
     sponsor: Schema.Attribute.Relation<'manyToOne', 'api::sponsor.sponsor'>;
+    sponsorLetters: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sponsor-letter.sponsor-letter'
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -791,6 +795,51 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiSponsorLetterSponsorLetter
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'sponsor_letters';
+  info: {
+    displayName: 'Sponsor Letter';
+    pluralName: 'sponsor-letters';
+    singularName: 'sponsor-letter';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    attachment: Schema.Attribute.Media<'files'>;
+    child: Schema.Attribute.Relation<'manyToOne', 'api::child.child'> &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    deliveryNotes: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sponsor-letter.sponsor-letter'
+    > &
+      Schema.Attribute.Private;
+    message: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    source: Schema.Attribute.Enumeration<['message', 'attachment', 'both']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'message'>;
+    sponsor: Schema.Attribute.Relation<'manyToOne', 'api::sponsor.sponsor'> &
+      Schema.Attribute.Required;
+    status: Schema.Attribute.Enumeration<
+      ['submitted', 'reviewed', 'delivered', 'rejected']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'submitted'>;
+    subject: Schema.Attribute.String;
+    submittedAt: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSponsorSponsor extends Struct.CollectionTypeSchema {
   collectionName: 'sponsors';
   info: {
@@ -825,6 +874,10 @@ export interface ApiSponsorSponsor extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
     publishedAt: Schema.Attribute.DateTime;
+    sponsorLetters: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sponsor-letter.sponsor-letter'
+    >;
     sponsorship: Schema.Attribute.Relation<
       'oneToOne',
       'api::sponsorship.sponsorship'
@@ -1450,6 +1503,7 @@ declare module '@strapi/strapi' {
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::link.link': ApiLinkLink;
       'api::service.service': ApiServiceService;
+      'api::sponsor-letter.sponsor-letter': ApiSponsorLetterSponsorLetter;
       'api::sponsor.sponsor': ApiSponsorSponsor;
       'api::sponsorship.sponsorship': ApiSponsorshipSponsorship;
       'api::stat.stat': ApiStatStat;

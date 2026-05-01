@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sponsor_letters",
+  "info": {
+    "singularName": "sponsor-letter",
+    "pluralName": "sponsor-letters",
+    "displayName": "Sponsor Letter"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "subject": {
+      "type": "string"
+    },
+    "message": {
+      "type": "text"
+    },
+    "source": {
+      "type": "enumeration",
+      "enum": [
+        "message",
+        "attachment",
+        "both"
+      ],
+      "default": "message",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "submitted",
+        "reviewed",
+        "delivered",
+        "rejected"
+      ],
+      "default": "submitted",
+      "required": true
+    },
+    "submittedAt": {
+      "type": "datetime",
+      "required": true
+    },
+    "deliveryNotes": {
+      "type": "text"
+    },
+    "attachment": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "sponsor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sponsor.sponsor",
+      "inversedBy": "sponsorLetters",
+      "required": true
+    },
+    "child": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::child.child",
+      "inversedBy": "sponsorLetters",
+      "required": true
+    }
+  }
+}
