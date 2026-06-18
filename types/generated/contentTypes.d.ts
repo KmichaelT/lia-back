@@ -604,6 +604,41 @@ export interface ApiChildChild extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiDeviceTokenDeviceToken extends Struct.CollectionTypeSchema {
+  collectionName: 'device_tokens';
+  info: {
+    displayName: 'device-token';
+    pluralName: 'device-tokens';
+    singularName: 'device-token';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    isActive: Schema.Attribute.Boolean;
+    lastSeenAt: Schema.Attribute.DateTime;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::device-token.device-token'
+    > &
+      Schema.Attribute.Private;
+    platform: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    token: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    user: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+  };
+}
+
 export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   collectionName: 'events';
   info: {
@@ -1448,6 +1483,10 @@ export interface PluginUsersPermissionsUser
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    device_tokens: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::device-token.device-token'
+    >;
     email: Schema.Attribute.Email &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -1498,6 +1537,7 @@ declare module '@strapi/strapi' {
       'api::blog.blog': ApiBlogBlog;
       'api::cause.cause': ApiCauseCause;
       'api::child.child': ApiChildChild;
+      'api::device-token.device-token': ApiDeviceTokenDeviceToken;
       'api::event.event': ApiEventEvent;
       'api::gallery.gallery': ApiGalleryGallery;
       'api::home-page.home-page': ApiHomePageHomePage;

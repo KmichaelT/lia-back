@@ -65,6 +65,12 @@
       "target": "plugin::users-permissions.role",
       "inversedBy": "users",
       "configurable": false
+    },
+    "device_tokens": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::device-token.device-token",
+      "mappedBy": "user"
     }
   }
 }
