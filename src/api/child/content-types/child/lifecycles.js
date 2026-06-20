@@ -20,7 +20,9 @@ module.exports = {
         where: { id: childId },
         populate: {
           images: true,
-          sponsor: true
+          sponsor: {
+            populate: ['user']
+          }
         }
       });
 
@@ -53,6 +55,10 @@ module.exports = {
 
         if (emailSent) {
           strapi.log.info(`Assignment notification email sent successfully for child ${child.fullName} to sponsor ${sponsor.email}`);
+
+          await strapi
+            .service('api::alert.alert')
+            .notifyChildSponsor(childId, 'assigned');
           
           // Optional: Update sponsor status to 'matched' if not already
           if (sponsor.sponsorshipStatus !== 'matched') {
@@ -69,6 +75,12 @@ module.exports = {
         strapi.log.info(`Sponsor removed from child ${childId}`);
       } else {
         strapi.log.info(`No sponsor change detected for child ${childId}`);
+
+        if (child.sponsor?.user?.id) {
+          await strapi
+            .service('api::alert.alert')
+            .notifyChildSponsor(childId, 'updated');
+        }
       }
 
     } catch (error) {
@@ -84,7 +96,11 @@ module.exports = {
       if (params.where.id) {
         const currentChild = await strapi.db.query('api::child.child').findOne({
           where: { id: params.where.id },
-          populate: ['sponsor']
+          populate: {
+            sponsor: {
+              populate: ['user']
+            }
+          }
         });
         
         // Store in event context for afterUpdate to use
