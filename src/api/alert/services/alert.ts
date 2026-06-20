@@ -97,6 +97,10 @@ export default factories.createCoreService(
         },
       });
 
+      strapi.log.info(
+        `[PushService] sendToAllUsers found ${tokens.length} active token records for payload type=${payload.data?.type}`
+      );
+
       return this.sendToTokens(
         dedupeTokens(tokens.map((entry: any) => entry.token)),
         payload
@@ -105,6 +109,9 @@ export default factories.createCoreService(
 
     async sendToTokens(tokens: string[], payload: NotificationPayload) {
       if (tokens.length === 0) {
+        strapi.log.warn(
+          `[PushService] sendToTokens skipped because no tokens were available for payload type=${payload.data?.type}`
+        );
         return {
           successCount: 0,
           failureCount: 0,
@@ -116,6 +123,10 @@ export default factories.createCoreService(
 
       const app = getFirebaseApp();
       const messaging = admin.messaging(app);
+
+      strapi.log.info(
+        `[PushService] Sending payload type=${payload.data?.type} to ${tokens.length} unique tokens`
+      );
 
       const response = await messaging.sendEachForMulticast({
         tokens,
@@ -138,6 +149,9 @@ export default factories.createCoreService(
         .map(({ token }) => token);
 
       if (invalidTokens.length > 0) {
+        strapi.log.warn(
+          `[PushService] Invalidating ${invalidTokens.length} tokens after send for payload type=${payload.data?.type}`
+        );
         await strapi.db.query('api::device-token.device-token').updateMany({
           where: {
             token: {
@@ -149,6 +163,10 @@ export default factories.createCoreService(
           },
         });
       }
+
+      strapi.log.info(
+        `[PushService] Send finished for payload type=${payload.data?.type}: success=${response.successCount}, failure=${response.failureCount}, invalidated=${invalidTokens.length}`
+      );
 
       return {
         successCount: response.successCount,
@@ -179,11 +197,18 @@ export default factories.createCoreService(
 
     async notifyCause(entry: any, action: 'created' | 'updated') {
       if (!entry?.publishedAt) {
+        strapi.log.info(
+          `[PushService] notifyCause skipped for cause ${entry?.id} because publishedAt is empty`
+        );
         return {
           skipped: true,
           reason: 'Project is not published.',
         };
       }
+
+      strapi.log.info(
+        `[PushService] notifyCause preparing ${action} notification for cause ${entry?.id} title="${entry?.title}"`
+      );
 
       return this.sendToAllUsers({
         title: action === 'created' ? 'New project available' : 'Project updated',
@@ -215,6 +240,61 @@ export default factories.createCoreService(
           entity: 'alert',
           entityId: entry.id,
           linkUrl: entry.linkUrl,
+        },
+      });
+    },
+
+    async notifyService(entry: any, action: 'created' | 'updated') {
+      if (!entry?.publishedAt) {
+        strapi.log.info(
+          `[PushService] notifyService skipped for service ${entry?.id} because publishedAt is empty`
+        );
+        return {
+          skipped: true,
+          reason: 'Service is not published.',
+        };
+      }
+
+      strapi.log.info(
+        `[PushService] notifyService preparing ${action} notification for service ${entry?.id} title="${entry?.title}"`
+      );
+
+      return this.sendToAllUsers({
+        title: action === 'created' ? 'New service available' : 'Service updated',
+        body: truncate(entry.title || 'A service has been updated.'),
+        data: {
+          type: action === 'created' ? 'service_created' : 'service_updated',
+          entity: 'service',
+          entityId: entry.id,
+          title: entry.title,
+        },
+      });
+    },
+
+    async notifyGallery(entry: any, action: 'created' | 'updated') {
+      if (!entry?.publishedAt) {
+        strapi.log.info(
+          `[PushService] notifyGallery skipped for gallery ${entry?.id} because publishedAt is empty`
+        );
+        return {
+          skipped: true,
+          reason: 'Gallery item is not published.',
+        };
+      }
+
+      strapi.log.info(
+        `[PushService] notifyGallery preparing ${action} notification for gallery ${entry?.id} name="${entry?.name}"`
+      );
+
+      return this.sendToAllUsers({
+        title: action === 'created' ? 'New gallery update' : 'Gallery updated',
+        body: truncate(entry.name || 'New photos or media have been added.'),
+        data: {
+          type: action === 'created' ? 'gallery_created' : 'gallery_updated',
+          entity: 'gallery',
+          entityId: entry.id,
+          title: entry.name,
+          category: entry.category,
         },
       });
     },
