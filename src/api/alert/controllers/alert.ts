@@ -57,5 +57,70 @@ export default factories.createCoreController(
         };
       }
     },
+
+    async auditPush(ctx) {
+      try {
+        const user = ctx.state.user;
+        const {
+          title = 'Audit notification',
+          body = 'Notification audit payload.',
+          data = {},
+          targetUserId,
+          audience = 'self',
+        } = ctx.request.body ?? {};
+
+        if (!user) {
+          return ctx.unauthorized('Authentication required.');
+        }
+
+        const payload = {
+          title,
+          body,
+          data: {
+            ...data,
+            type: data?.type ?? 'audit_push',
+          },
+        };
+
+        if (audience === 'all') {
+          const result = await strapi
+            .service('api::alert.alert')
+            .debugSendToAllUsers(payload);
+
+          ctx.body = {
+            message: 'Push audit completed for broadcast audience.',
+            ...result,
+          };
+          return;
+        }
+
+        const recipientUserId = Number(targetUserId ?? user.id);
+        if (Number.isNaN(recipientUserId)) {
+          return ctx.badRequest('targetUserId must be a valid number.');
+        }
+
+        const result = await strapi
+          .service('api::alert.alert')
+          .debugSendToUsers([recipientUserId], payload);
+
+        ctx.body = {
+          message: 'Push audit completed for selected users.',
+          ...result,
+        };
+      } catch (error) {
+        const message =
+          error instanceof Error ? error.message : String(error);
+
+        const stack =
+          error instanceof Error ? error.stack : null;
+
+        ctx.status = 500;
+        ctx.body = {
+          message: 'Push audit failed',
+          error: message,
+          stack,
+        };
+      }
+    },
   })
 );

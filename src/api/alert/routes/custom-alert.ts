@@ -10,5 +10,15 @@ export default {
         },
       },
     },
+    {
+      method: 'POST',
+      path: '/alerts/audit-push',
+      handler: 'alert.auditPush',
+      config: {
+        auth: {
+          scope: [],
+        },
+      },
+    },
   ],
 };

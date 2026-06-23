@@ -13,6 +13,14 @@ type NotificationPayload = {
   data?: Record<string, PrimitiveValue>;
 };
 
+type TokenRecord = {
+  id?: number;
+  token?: string | null;
+  user?: {
+    id?: number;
+  };
+};
+
 const getFirebaseApp = () => {
   if (admin.apps.length > 0) {
     return admin.app();
@@ -51,6 +59,12 @@ const dedupeTokens = (tokens: Array<string | null | undefined>) => [
 const truncate = (value: string, max = 140) =>
   value.length <= max ? value : `${value.slice(0, max - 1)}...`;
 
+const maskToken = (token?: string | null) => {
+  if (!token) return 'null';
+  if (token.length <= 12) return token;
+  return `${token.substring(0, 6)}...${token.substring(token.length - 6)}`;
+};
+
 export default factories.createCoreService(
   'api::alert.alert',
   ({ strapi }) => ({
@@ -60,6 +74,35 @@ export default factories.createCoreService(
 
     shouldNotifyUpdate(before: any, after: any) {
       return (!before?.publishedAt && !!after?.publishedAt) || !!after?.publishedAt;
+    },
+
+    buildAuditSummary({
+      payload,
+      userIds = [],
+      tokenRecords = [],
+      sendResult,
+      skippedReason,
+    }: {
+      payload: NotificationPayload;
+      userIds?: number[];
+      tokenRecords?: TokenRecord[];
+      sendResult?: Record<string, any>;
+      skippedReason?: string;
+    }) {
+      const dedupedTokens = dedupeTokens(tokenRecords.map((entry) => entry.token));
+      return {
+        payload: {
+          title: payload.title,
+          body: payload.body,
+          data: payload.data ?? {},
+        },
+        targetedUserIds: userIds,
+        selectedTokenCount: tokenRecords.length,
+        uniqueTokenCount: dedupedTokens.length,
+        selectedTokens: dedupedTokens.map(maskToken),
+        skippedReason,
+        result: sendResult ?? null,
+      };
     },
 
     async sendToUsers(userIds: number[], payload: NotificationPayload) {
@@ -73,7 +116,7 @@ export default factories.createCoreService(
         };
       }
 
-      const tokens = await strapi.db.query('api::device-token.device-token').findMany({
+      const tokenRecords = await strapi.db.query('api::device-token.device-token').findMany({
         where: {
           isActive: true,
           user: {
@@ -82,29 +125,94 @@ export default factories.createCoreService(
             },
           },
         },
+        populate: ['user'],
       });
 
       return this.sendToTokens(
-        dedupeTokens(tokens.map((entry: any) => entry.token)),
+        dedupeTokens(tokenRecords.map((entry: any) => entry.token)),
         payload
       );
     },
 
     async sendToAllUsers(payload: NotificationPayload) {
-      const tokens = await strapi.db.query('api::device-token.device-token').findMany({
+      const tokenRecords = await strapi.db.query('api::device-token.device-token').findMany({
         where: {
           isActive: true,
         },
+        populate: ['user'],
       });
 
       strapi.log.info(
-        `[PushService] sendToAllUsers found ${tokens.length} active token records for payload type=${payload.data?.type}`
+        `[PushService] sendToAllUsers found ${tokenRecords.length} active token records for payload type=${payload.data?.type}`
       );
 
       return this.sendToTokens(
-        dedupeTokens(tokens.map((entry: any) => entry.token)),
+        dedupeTokens(tokenRecords.map((entry: any) => entry.token)),
         payload
       );
+    },
+
+    async debugSendToUsers(userIds: number[], payload: NotificationPayload) {
+      const tokenRecords = await strapi.db.query('api::device-token.device-token').findMany({
+        where: {
+          isActive: true,
+          user: {
+            id: {
+              $in: userIds,
+            },
+          },
+        },
+        populate: ['user'],
+      });
+
+      if (tokenRecords.length == 0) {
+        return this.buildAuditSummary({
+          payload,
+          userIds,
+          tokenRecords,
+          skippedReason: 'No active device tokens found for selected users.',
+        });
+      }
+
+      const sendResult = await this.sendToTokens(
+        dedupeTokens(tokenRecords.map((entry: any) => entry.token)),
+        payload
+      );
+
+      return this.buildAuditSummary({
+        payload,
+        userIds,
+        tokenRecords,
+        sendResult,
+      });
+    },
+
+    async debugSendToAllUsers(payload: NotificationPayload) {
+      const tokenRecords = await strapi.db.query('api::device-token.device-token').findMany({
+        where: {
+          isActive: true,
+        },
+        populate: ['user'],
+      });
+
+      if (tokenRecords.length == 0) {
+        return this.buildAuditSummary({
+          payload,
+          tokenRecords,
+          skippedReason: 'No active device tokens found for broadcast.',
+        });
+      }
+
+      const sendResult = await this.sendToTokens(
+        dedupeTokens(tokenRecords.map((entry: any) => entry.token)),
+        payload
+      );
+
+      return this.buildAuditSummary({
+        payload,
+        tokenRecords,
+        sendResult,
+      });
     },
 
     async sendToTokens(tokens: string[], payload: NotificationPayload) {
