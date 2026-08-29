@@ -576,22 +576,35 @@ export default {
       });
 
       let updatedChildren = 0;
+      let failedChildren = 0;
       for (const child of children) {
-        const media = child.images ?? [];
-        const imageCount = media.filter((file: any) => file.mime?.startsWith('image/')).length;
-        const videoCount = media.filter((file: any) => file.mime?.startsWith('video/')).length;
+        try {
+          const media = child.images ?? [];
+          const imageCount = media.filter((file: any) => file.mime?.startsWith('image/')).length;
+          const videoCount = media.filter((file: any) => file.mime?.startsWith('video/')).length;
 
-        if (child.imageCount !== imageCount || child.videoCount !== videoCount) {
-          await strapi.db.query(CHILD_UID).update({
-            where: { id: child.id },
-            data: { imageCount, videoCount },
-          });
-          updatedChildren += 1;
+          if (child.imageCount !== imageCount || child.videoCount !== videoCount) {
+            // Avoid firing content lifecycles while repairing derived fields.
+            await strapi.db.connection('children').where({ id: child.id }).update({
+              image_count: imageCount,
+              video_count: videoCount,
+            });
+            updatedChildren += 1;
+          }
+        } catch (error) {
+          failedChildren += 1;
+          strapi.log.error(
+            `[ChildMediaCounts] Could not update child row ${child.id}:`,
+            error
+          );
         }
       }
 
       if (updatedChildren > 0) {
         strapi.log.info(`[ChildMediaCounts] Updated ${updatedChildren} child media counters`);
+      }
+      if (failedChildren > 0) {
+        strapi.log.warn(`[ChildMediaCounts] Failed to update ${failedChildren} child media counters`);
       }
     } catch (error) {
       strapi.log.error('[ChildMediaCounts] Initial counter sync failed:', error);

@@ -29,11 +29,11 @@ const refreshMediaCounts = async (id?: number | string) => {
     return;
   }
 
-  // Use the query engine here so the derived values are saved immediately after
-  // media relations have been connected by Strapi.
-  await strapi.db.query(CHILD_UID).update({
-    where: { id },
-    data: counts,
+  // Write the derived values directly. Going back through the query engine from
+  // an afterUpdate hook would trigger the same lifecycle recursively.
+  await strapi.db.connection('children').where({ id }).update({
+    image_count: counts.imageCount,
+    video_count: counts.videoCount,
   });
 };
 
@@ -43,14 +43,6 @@ export default {
   },
 
   async afterUpdate(event) {
-    const changedFields = Object.keys(event.params?.data ?? {});
-    const onlyCountsChanged =
-      changedFields.length > 0 &&
-      changedFields.every((field) => field === 'imageCount' || field === 'videoCount');
-
-    if (!onlyCountsChanged) {
-      await refreshMediaCounts(event.result?.id);
-    }
+    await refreshMediaCounts(event.result?.id);
   },
 };
-
