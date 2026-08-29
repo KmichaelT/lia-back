@@ -1,4 +1,8 @@
 import type { StrapiApp } from '@strapi/strapi/admin';
+import {
+  addChildMediaCountColumns,
+  ExportChildrenButton,
+} from './components/ChildMediaTools';
 
 export default {
   config: {
@@ -47,6 +51,18 @@ export default {
     notifications: {
       releases: false,
     },
+  },
+
+  register(app: StrapiApp) {
+    app.registerHook(
+      'Admin/CM/pages/ListView/inject-column-in-table',
+      addChildMediaCountColumns
+    );
+
+    app.getPlugin('content-manager').injectComponent('listView', 'actions', {
+      name: 'lia-export-children',
+      Component: ExportChildrenButton,
+    });
   },
   
   bootstrap(_app: StrapiApp) {

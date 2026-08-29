@@ -21,6 +21,19 @@ type TokenRecord = {
   };
 };
 
+type NotificationDebugEntry = {
+  timestamp: string;
+  source: string;
+  entity?: string;
+  entityId?: number | string | null;
+  action?: string;
+  status: 'success' | 'skipped' | 'error';
+  payload?: NotificationPayload;
+  details?: Record<string, any>;
+};
+
+let lastNotificationDebug: NotificationDebugEntry | null = null;
+
 const getFirebaseApp = () => {
   if (admin.apps.length > 0) {
     return admin.app();
@@ -68,6 +81,19 @@ const maskToken = (token?: string | null) => {
 export default factories.createCoreService(
   'api::alert.alert',
   ({ strapi }) => ({
+    recordNotificationDebug(entry: NotificationDebugEntry) {
+      lastNotificationDebug = {
+        ...entry,
+        timestamp: entry.timestamp || new Date().toISOString(),
+      };
+      strapi.log.info(`[PushDebug] ${JSON.stringify(lastNotificationDebug)}`);
+      return lastNotificationDebug;
+    },
+
+    getLastNotificationDebug() {
+      return lastNotificationDebug;
+    },
+
     shouldNotifyCreate(entry: any) {
       return !!entry?.publishedAt;
     },
@@ -272,6 +298,14 @@ export default factories.createCoreService(
         });
       }
 
+      const failures = response.responses
+        .map((result, index) => ({
+          token: maskToken(tokens[index]),
+          code: result.error?.code ?? null,
+          message: result.error?.message ?? null,
+        }))
+        .filter((item) => item.code || item.message);
+
       strapi.log.info(
         `[PushService] Send finished for payload type=${payload.data?.type}: success=${response.successCount}, failure=${response.failureCount}, invalidated=${invalidTokens.length}`
       );
@@ -280,6 +314,7 @@ export default factories.createCoreService(
         successCount: response.successCount,
         failureCount: response.failureCount,
         invalidatedTokens: invalidTokens.length,
+        failures,
       };
     },
 

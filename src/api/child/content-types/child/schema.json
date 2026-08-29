@@ -72,6 +72,18 @@
         "audios"
       ]
     },
+    "imageCount": {
+      "type": "integer",
+      "default": 0,
+      "min": 0,
+      "configurable": false
+    },
+    "videoCount": {
+      "type": "integer",
+      "default": 0,
+      "min": 0,
+      "configurable": false
+    },
     "sponsorLetters": {
       "type": "relation",
       "relation": "oneToMany",

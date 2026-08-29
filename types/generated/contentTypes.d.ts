@@ -580,6 +580,14 @@ export interface ApiChildChild extends Struct.CollectionTypeSchema {
     fullName: Schema.Attribute.String;
     gradeAtJoining: Schema.Attribute.String;
     hobby: Schema.Attribute.String;
+    imageCount: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
     images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
@@ -600,6 +608,14 @@ export interface ApiChildChild extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    videoCount: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
     walkToSchool: Schema.Attribute.String;
   };
 }

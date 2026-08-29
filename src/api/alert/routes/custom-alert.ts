@@ -20,5 +20,15 @@ export default {
         },
       },
     },
+    {
+      method: 'GET',
+      path: '/alerts/last-notification-debug',
+      handler: 'alert.lastNotificationDebug',
+      config: {
+        auth: {
+          scope: [],
+        },
+      },
+    },
   ],
 };

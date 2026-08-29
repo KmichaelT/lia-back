@@ -122,5 +122,33 @@ export default factories.createCoreController(
         };
       }
     },
+
+    async lastNotificationDebug(ctx) {
+      try {
+        const result = await strapi
+          .service('api::alert.alert')
+          .getLastNotificationDebug();
+
+        ctx.body = {
+          message: result
+              ? 'Latest automatic notification debug loaded.'
+              : 'No automatic notification debug recorded yet.',
+          data: result,
+        };
+      } catch (error) {
+        const message =
+          error instanceof Error ? error.message : String(error);
+
+        const stack =
+          error instanceof Error ? error.stack : null;
+
+        ctx.status = 500;
+        ctx.body = {
+          message: 'Failed to load latest notification debug',
+          error: message,
+          stack,
+        };
+      }
+    },
   })
 );
