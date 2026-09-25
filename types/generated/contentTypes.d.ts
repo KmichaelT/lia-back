@@ -432,6 +432,61 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiAcademicResultAcademicResult
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'academic_results';
+  info: {
+    description: "A child's result for one academic year and reporting period";
+    displayName: 'Academic Result';
+    pluralName: 'academic-results';
+    singularName: 'academic-result';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    academicYear: Schema.Attribute.String & Schema.Attribute.Required;
+    average: Schema.Attribute.Decimal;
+    child: Schema.Attribute.Relation<'manyToOne', 'api::child.child'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    grade: Schema.Attribute.String & Schema.Attribute.Required;
+    importedAt: Schema.Attribute.DateTime;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::academic-result.academic-result'
+    > &
+      Schema.Attribute.Private;
+    matchStatus: Schema.Attribute.Enumeration<['pending', 'matched']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'pending'>;
+    publishedAt: Schema.Attribute.DateTime;
+    rank: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+    semester: Schema.Attribute.Enumeration<
+      ['semester_1', 'semester_2', 'average']
+    > &
+      Schema.Attribute.Required;
+    sourceFileName: Schema.Attribute.String;
+    sourceStudentName: Schema.Attribute.String;
+    studentGroupKey: Schema.Attribute.String & Schema.Attribute.Required;
+    studentName: Schema.Attribute.String & Schema.Attribute.Required;
+    subjects: Schema.Attribute.JSON & Schema.Attribute.Required;
+    total: Schema.Attribute.Decimal;
+    unresolvedReason: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiAlertAlert extends Struct.CollectionTypeSchema {
   collectionName: 'alerts';
   info: {
@@ -568,6 +623,10 @@ export interface ApiChildChild extends Struct.CollectionTypeSchema {
   };
   attributes: {
     about: Schema.Attribute.Text;
+    academicResults: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::academic-result.academic-result'
+    >;
     ageAtJoining: Schema.Attribute.String;
     aspiration: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
@@ -1549,6 +1608,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about-us.about-us': ApiAboutUsAboutUs;
+      'api::academic-result.academic-result': ApiAcademicResultAcademicResult;
       'api::alert.alert': ApiAlertAlert;
       'api::blog.blog': ApiBlogBlog;
       'api::cause.cause': ApiCauseCause;

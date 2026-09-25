@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "collectionName": "academic_results",
+  "info": {
+    "singularName": "academic-result",
+    "pluralName": "academic-results",
+    "displayName": "Academic Result",
+    "description": "A child's result for one academic year and reporting period"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "child": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::child.child",
+      "inversedBy": "academicResults"
+    },
+    "academicYear": {
+      "type": "string",
+      "required": true
+    },
+    "grade": {
+      "type": "string",
+      "required": true
+    },
+    "semester": {
+      "type": "enumeration",
+      "enum": [
+        "semester_1",
+        "semester_2",
+        "average"
+      ],
+      "required": true
+    },
+    "subjects": {
+      "type": "json",
+      "required": true
+    },
+    "total": {
+      "type": "decimal"
+    },
+    "average": {
+      "type": "decimal"
+    },
+    "rank": {
+      "type": "integer",
+      "min": 1
+    },
+    "studentName": {
+      "type": "string",
+      "required": true
+    },
+    "studentGroupKey": {
+      "type": "string",
+      "required": true
+    },
+    "matchStatus": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "matched"
+      ],
+      "default": "pending",
+      "required": true
+    },
+    "unresolvedReason": {
+      "type": "string"
+    },
+    "sourceStudentName": {
+      "type": "string"
+    },
+    "sourceFileName": {
+      "type": "string"
+    },
+    "importedAt": {
+      "type": "datetime"
+    }
+  }
+}

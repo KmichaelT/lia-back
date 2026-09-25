@@ -89,6 +89,12 @@
       "relation": "oneToMany",
       "target": "api::sponsor-letter.sponsor-letter",
       "mappedBy": "child"
+    },
+    "academicResults": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::academic-result.academic-result",
+      "mappedBy": "child"
     }
   }
 }
